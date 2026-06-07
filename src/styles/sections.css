@@ -13,7 +13,7 @@
 }
 
 .hero-copy {
-  max-width: 700px;
+  max-width: 640px;
   padding-top: 36px;
   pointer-events: auto;
 }
@@ -122,9 +122,10 @@ h1 {
 }
 
 .active-brief {
-  align-self: end;
-  width: min(100%, 420px);
-  margin-left: auto;
+  grid-column: 1;
+  align-self: start;
+  width: min(100%, 520px);
+  margin-left: 0;
   border: 1px solid var(--border-soft);
   border-radius: 8px;
   background: var(--panel-bg);

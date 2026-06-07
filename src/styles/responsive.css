@@ -1,6 +1,19 @@
 @media (max-width: 1120px) {
+  .scene-layer {
+    top: 88px;
+    right: 16px;
+    bottom: auto;
+    left: 16px;
+    height: min(48svh, 460px);
+  }
+
+  .scene-layer::after {
+    background: var(--scene-overlay-mobile);
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
+    padding-top: 38svh;
   }
 
   .active-brief {
@@ -79,7 +92,9 @@
   .scene-layer {
     height: 58svh;
     top: 52px;
+    right: 12px;
     bottom: auto;
+    left: 12px;
   }
 
   .scene-layer::after {
