@@ -1,4 +1,4 @@
-import { ExternalLink, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "../../data/resume";
 
 export function ProfileLinks() {
@@ -12,9 +12,9 @@ export function ProfileLinks() {
         <Mail size={17} aria-hidden="true" />
         Email
       </a>
-      <a href={profile.existingPortfolio} target="_blank" rel="noreferrer">
-        <ExternalLink size={17} aria-hidden="true" />
-        Existing portfolio
+      <a href={profile.github} target="_blank" rel="noreferrer">
+        <Github size={17} aria-hidden="true" />
+        GitHub
       </a>
     </div>
   );

@@ -18,6 +18,7 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
         <a href="#experience" data-short-label="Exp">Experience</a>
         <a href="#projects" data-short-label="Work">Projects</a>
         <a href="#skills" data-short-label="Skills">Skills</a>
+        <a href="#contact" data-short-label="Talk">Contact</a>
       </nav>
       <div className="header-actions">
         <ThemeToggle theme={theme} onToggle={onToggleTheme} />

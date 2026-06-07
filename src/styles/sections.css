@@ -616,6 +616,98 @@ h1 {
   margin-top: 18px;
 }
 
+.contact-section {
+  padding-top: 72px;
+}
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: 18px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--panel-bg);
+  padding: 20px;
+  backdrop-filter: blur(14px);
+}
+
+.contact-copy {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.contact-copy span {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-cyan);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-copy h3 {
+  margin: 0;
+  color: var(--text-heading);
+  font-size: clamp(1.65rem, 3vw, 2.55rem);
+  line-height: 1;
+}
+
+.contact-copy p {
+  max-width: 560px;
+  color: var(--text-muted);
+  line-height: 1.62;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.contact-grid a {
+  display: grid;
+  min-height: 122px;
+  align-content: space-between;
+  gap: 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--panel-bg-soft);
+  color: var(--text-muted);
+  padding: 16px;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.contact-grid a:hover,
+.contact-grid a:focus-visible {
+  border-color: color-mix(in srgb, var(--accent-green) 58%, transparent);
+  background: color-mix(in srgb, var(--accent-green) 8%, var(--panel-bg-soft));
+  outline: none;
+  transform: translateY(-3px);
+}
+
+.contact-grid svg {
+  color: var(--accent-green);
+}
+
+.contact-grid span {
+  color: var(--accent-amber);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-grid strong {
+  color: var(--text-heading);
+  font-size: 0.96rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
 footer {
   display: flex;
   width: min(100% - 32px, var(--max-width));
@@ -631,6 +723,12 @@ footer {
 
 footer a {
   color: var(--accent-green);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 @keyframes signal-sweep {

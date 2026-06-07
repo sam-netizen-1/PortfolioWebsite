@@ -27,7 +27,7 @@ export type Profile = {
   secondaryEmail: string;
   phone: string;
   linkedin: string;
-  existingPortfolio: string;
+  github: string;
   resume: string;
 };
 

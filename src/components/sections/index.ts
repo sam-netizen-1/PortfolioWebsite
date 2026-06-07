@@ -1,3 +1,4 @@
+export { ContactSection } from "./ContactSection";
 export { ExperienceTimeline } from "./ExperienceTimeline";
 export { HeroSection } from "./HeroSection";
 export { LinkedInProofSection } from "./LinkedInProofSection";

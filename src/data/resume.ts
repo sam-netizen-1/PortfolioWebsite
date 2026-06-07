@@ -10,7 +10,7 @@ export const profile: Profile = {
   secondaryEmail: "snkothari15@gmail.com",
   phone: "8669129605",
   linkedin: "https://www.linkedin.com/in/samkit-kothari-84b5131b4",
-  existingPortfolio: "https://samkit-kothari.vercel.app/",
+  github: "https://github.com/sam-netizen-1",
   resume: "/samkit-kothari-sse-resume.pdf"
 };
 
@@ -98,6 +98,17 @@ export const experiences: Experience[] = [
       "Built React and Next.js applications with Tailwind, MUI, Chakra UI, and reusable frontend systems.",
       "Improved cross-browser compatibility and performance through code splitting, lazy loading, and testing coverage.",
       "Contributed to agile delivery, CI/CD practice, and peer code reviews."
+    ]
+  },
+  {
+    company: "SNJB's KBJ College of Engineering, Chandwad",
+    role: "Bachelor of Engineering, Computer Engineering",
+    period: "Aug 2018 - Jun 2022",
+    summary:
+      "Computer engineering foundation across software development, problem solving, algorithms, and team-based project delivery.",
+    highlights: [
+      "Graduated with a 9.14 grade while building a strong base in computer science and programming fundamentals.",
+      "Developed project, collaboration, and analytical skills that shaped the frontend engineering path that followed."
     ]
   }
 ];
@@ -189,6 +200,6 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Contact Channels",
     icon: "mail",
-    skills: ["LinkedIn", "Email", "Resume PDF", "Existing portfolio"]
+    skills: ["LinkedIn", "Email", "GitHub", "Resume PDF"]
   }
 ];

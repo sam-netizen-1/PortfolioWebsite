@@ -7,8 +7,8 @@ export function ExperienceTimeline() {
     <section className="content-section" id="experience">
       <SectionHeading
         eyebrow="Experience timeline"
-        title="Frontend systems built for real commerce pressure."
-        description="Two engineering chapters tied together by reusable UI systems, platform thinking, performance ownership, and product delivery."
+        title="Frontend systems, product delivery, and engineering foundations."
+        description="A career path shaped by ecommerce platform work, reusable UI systems, performance ownership, and a computer engineering foundation."
       />
       <div className="timeline">
         {experiences.map((experience, index) => (

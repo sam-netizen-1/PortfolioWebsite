@@ -1,7 +1,7 @@
 import { useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { Footer, Header } from "./components/layout";
-import { ExperienceTimeline, HeroSection, LinkedInProofSection, ProjectsShowroom, SkillsConstellation } from "./components/sections";
+import { ContactSection, ExperienceTimeline, HeroSection, LinkedInProofSection, ProjectsShowroom, SkillsConstellation } from "./components/sections";
 import { projects } from "./data/resume";
 import { useThemePreference } from "./hooks/useThemePreference";
 import type { ProjectId } from "./types/portfolio";
@@ -20,6 +20,7 @@ function App() {
         <ExperienceTimeline />
         <ProjectsShowroom activeProjectId={activeProjectId} onSelectProject={setActiveProjectId} />
         <SkillsConstellation />
+        <ContactSection />
       </main>
       <Footer />
     </div>

@@ -1,6 +1,6 @@
-# Commerce Experience Command Center
+# Samkit Kothari Portfolio
 
-Samkit Kothari's resume data presented as a 3D portfolio for frontend, ecommerce, personalization, AI content, and performance engineering.
+Samkit Kothari's main portfolio presented as a 3D commerce command center for frontend engineering, ecommerce storefronts, personalization, AI content workflows, and performance engineering.
 
 ## Stack
 
@@ -10,6 +10,14 @@ Samkit Kothari's resume data presented as a 3D portfolio for frontend, ecommerce
 - Framer Motion
 - Lucide React icons
 - Vercel deployment
+
+## Highlights
+
+- 3D command center mapped to real projects and resume impact.
+- Project showroom with problem, solution, technology, and measurable outcome.
+- Experience timeline covering THG, Coditas, and education.
+- Contact section with email, LinkedIn, GitHub, and resume download.
+- Light/dark mode, responsive layout, reduced-motion support, and loading state.
 
 ## Structure
 

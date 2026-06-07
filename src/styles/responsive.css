@@ -18,6 +18,10 @@
     grid-template-columns: 1fr;
   }
 
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
   .recommendation-panel a {
     width: fit-content;
   }
@@ -105,6 +109,7 @@
   .metric-rail,
   .proof-grid,
   .project-grid,
+  .contact-grid,
   .skill-grid {
     grid-template-columns: 1fr;
   }
@@ -155,6 +160,8 @@
   .metric-tile,
   .proof-card,
   .recommendation-panel,
+  .contact-panel,
+  .contact-grid a,
   .project-card,
   .skill-card {
     padding: 16px;
