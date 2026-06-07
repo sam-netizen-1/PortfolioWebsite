@@ -1,10 +1,10 @@
 @media (max-width: 1120px) {
   .scene-layer {
     top: 88px;
-    right: 16px;
+    right: -22px;
     bottom: auto;
-    left: 16px;
-    height: min(48svh, 460px);
+    left: -22px;
+    height: min(50svh, 480px);
   }
 
   .scene-layer::after {
@@ -90,11 +90,11 @@
   }
 
   .scene-layer {
-    height: 58svh;
+    height: 60svh;
     top: 52px;
-    right: 12px;
+    right: -14px;
     bottom: auto;
-    left: 12px;
+    left: -14px;
   }
 
   .scene-layer::after {
