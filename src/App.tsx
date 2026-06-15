@@ -1,39 +1,29 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import Loader from "./components/Loader";
-import Navbar from "./components/Navbar";
-import About from "./components/About";
-import Footer from "./components/Footer";
-import ProfileSummary from "./components/ProfileSummary";
-import Skills from "./components/Skills";
-import ContactMe from "./components/ContactMe";
-import Experience from "./components/Experience";
+import { useReducedMotion } from "framer-motion";
+import { useState } from "react";
+import { Footer, Header } from "./components/layout";
+import { ContactSection, ExperienceTimeline, HeroSection, LinkedInProofSection, ProjectsShowroom, SkillsConstellation } from "./components/sections";
+import { projects } from "./data/resume";
+import { useThemePreference } from "./hooks/useThemePreference";
+import type { ProjectId } from "./types/portfolio";
 
 function App() {
-  const [showLoader, setShowLoader] = useState(true);
-  useEffect(() => {
-    setTimeout(() => setShowLoader(false), 1111);
-  }, []);
+  const [activeProjectId, setActiveProjectId] = useState<ProjectId>(projects[0].id);
+  const reducedMotion = useReducedMotion();
+  const { theme, toggleTheme } = useThemePreference();
+
   return (
-    <>
-      {showLoader ? <Loader size={80} borderWidth={4} /> : <Navbar />}
-      <div className="container-grey" id="about">
-        <About />
-      </div>
-      <div className="container-white" id="experience">
-        <Experience />
-      </div>
-      <div className="container-grey" id="skills">
-        <Skills />
-      </div>
-      <div className="container-white" id="profileQuestions">
-        <ProfileSummary />
-      </div>
-      <div id="contact">
-        <ContactMe />
-      </div>
+    <div className="app-shell" data-theme={theme}>
+      <Header theme={theme} onToggleTheme={toggleTheme} />
+      <main>
+        <HeroSection activeProjectId={activeProjectId} onSelectProject={setActiveProjectId} reduceMotion={Boolean(reducedMotion)} theme={theme} />
+        <LinkedInProofSection />
+        <ExperienceTimeline />
+        <ProjectsShowroom activeProjectId={activeProjectId} onSelectProject={setActiveProjectId} />
+        <SkillsConstellation />
+        <ContactSection />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
