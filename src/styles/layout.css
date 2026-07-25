@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+  scroll-margin-top: 96px;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -32,6 +36,24 @@ button {
 .app-shell {
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  border-radius: 8px;
+  background: var(--accent-green);
+  color: var(--button-text);
+  padding: 10px 14px;
+  font-weight: 800;
+  transform: translateY(-160%);
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 .site-header {
@@ -70,6 +92,10 @@ button {
   align-items: center;
   gap: 6px;
   padding: 4px;
+}
+
+.nav-label-short {
+  display: none;
 }
 
 .site-header nav a,
@@ -114,6 +140,13 @@ button {
   border: 1px solid var(--border-subtle);
   background: transparent;
   cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
 }
 
 .hero-section {

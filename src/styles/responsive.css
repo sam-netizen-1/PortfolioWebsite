@@ -90,11 +90,13 @@
   }
 
   .scene-layer {
-    height: 60svh;
-    top: 52px;
+    height: min(32svh, 280px);
+    top: 64px;
     right: -14px;
     bottom: auto;
     left: -14px;
+    opacity: 0.82;
+    pointer-events: none;
   }
 
   .scene-layer::after {
@@ -103,7 +105,7 @@
 
   .hero-grid {
     min-height: auto;
-    padding-top: 42svh;
+    padding-top: min(25svh, 210px);
     gap: 18px;
   }
 
@@ -121,12 +123,28 @@
     line-height: 1.62;
   }
 
-  .metric-rail,
-  .proof-grid,
   .project-grid,
   .contact-grid,
   .skill-grid {
     grid-template-columns: 1fr;
+  }
+
+  .metric-rail {
+    grid-template-columns: none;
+    grid-auto-columns: minmax(156px, 58vw);
+    grid-auto-flow: column;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+
+  .metric-tile {
+    scroll-snap-align: start;
+  }
+
+  .proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .scroll-cue {
@@ -212,10 +230,13 @@
 }
 
 @media (max-width: 500px) {
-  .brand-mark,
-  .icon-link {
+  .brand-mark {
     width: 38px;
     height: 38px;
+  }
+
+  .icon-link {
+    display: none;
   }
 
   .theme-toggle {
@@ -242,17 +263,40 @@
     font-size: 0.74rem;
   }
 
-  .hero-actions,
-  .profile-links,
+  .hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .primary-action,
+  .secondary-action {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .profile-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .profile-links a {
+    width: 100%;
+    padding-right: 7px;
+    padding-left: 7px;
+    font-size: 0.82rem;
+  }
+
   .contact-dock {
     flex-direction: column;
   }
 
-  .primary-action,
-  .secondary-action,
-  .profile-links a,
   .contact-dock a {
     width: 100%;
+  }
+
+  .project-card:not(.active) {
+    display: none;
   }
 
   .metric-tile {
@@ -266,13 +310,12 @@
     padding: 0 5px;
   }
 
-  .site-header nav a {
-    font-size: 0;
+  .nav-label-full {
+    display: none;
   }
 
-  .site-header nav a::before {
-    content: attr(data-short-label);
-    font-size: 0.72rem;
+  .nav-label-short {
+    display: inline;
   }
 
   .hero-section {

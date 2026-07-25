@@ -6,14 +6,14 @@ export function ExperienceTimeline() {
   return (
     <section className="content-section" id="experience">
       <SectionHeading
-        eyebrow="Experience timeline"
-        title="Frontend systems, product delivery, and engineering foundations."
-        description="A career path shaped by ecommerce platform work, reusable UI systems, performance ownership, and a computer engineering foundation."
+        eyebrow="Career and education"
+        title="Frontend growth, product delivery, and engineering foundations."
+        description="A timeline shaped by ecommerce platform work, increasing technical ownership, business education, and a computer engineering foundation."
       />
       <div className="timeline">
         {experiences.map((experience, index) => (
           <motion.article
-            key={experience.company}
+            key={`${experience.company}-${experience.role}`}
             className="timeline-item"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -26,11 +26,23 @@ export function ExperienceTimeline() {
               <h3>{experience.role}</h3>
               <strong>{experience.company}</strong>
               <p>{experience.summary}</p>
-              <ul>
-                {experience.highlights.map((highlight) => (
+              <ul className="timeline-highlights">
+                {experience.highlights.slice(0, 2).map((highlight) => (
                   <li key={highlight}>{highlight}</li>
                 ))}
               </ul>
+              {experience.highlights.length > 2 ? (
+                <details className="timeline-more">
+                  <summary>
+                    View {experience.highlights.length - 2} more contribution{experience.highlights.length - 2 === 1 ? "" : "s"}
+                  </summary>
+                  <ul>
+                    {experience.highlights.slice(2).map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                </details>
+              ) : null}
             </div>
           </motion.article>
         ))}

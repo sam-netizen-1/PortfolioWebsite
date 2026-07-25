@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { BadgeCheck, Download, MousePointer2 } from "lucide-react";
-import { CommandCenterScene } from "../scene";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { ProfileLinks } from "../ui/ProfileLinks";
 import { profile } from "../../data/resume";
 import type { ProjectId } from "../../types/portfolio";
 import type { ThemeMode } from "../../types/theme";
 import { ActiveProjectBrief } from "./ActiveProjectBrief";
 import { ImpactMetrics } from "./ImpactMetrics";
+
+const CommandCenterScene = lazy(() => import("../scene/CommandCenterScene"));
 
 type HeroSectionProps = {
   activeProjectId: ProjectId;
@@ -16,10 +18,52 @@ type HeroSectionProps = {
 };
 
 export function HeroSection({ activeProjectId, onSelectProject, reduceMotion, theme }: HeroSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [shouldLoadScene, setShouldLoadScene] = useState(false);
+  const [isSceneVisible, setIsSceneVisible] = useState(true);
+
+  useEffect(() => {
+    const delay = window.matchMedia("(max-width: 760px)").matches ? 420 : 180;
+    const timer = window.setTimeout(() => setShouldLoadScene(true), delay);
+
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section || typeof IntersectionObserver === "undefined") return undefined;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsSceneVisible(entry.isIntersecting);
+    }, { rootMargin: "120px 0px", threshold: 0.02 });
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scenePlaceholder = (
+    <div className="scene-preloader">
+      <span />
+      <strong>Loading interactive project map</strong>
+    </div>
+  );
+
   return (
-    <section className="hero-section" id="top">
+    <section ref={sectionRef} className="hero-section" id="top">
       <div className="scene-layer" aria-hidden="true">
-        <CommandCenterScene activeProjectId={activeProjectId} onSelectProject={onSelectProject} reduceMotion={reduceMotion} theme={theme} />
+        {shouldLoadScene ? (
+          <Suspense fallback={scenePlaceholder}>
+            <CommandCenterScene
+              activeProjectId={activeProjectId}
+              isSceneVisible={isSceneVisible}
+              onSelectProject={onSelectProject}
+              reduceMotion={reduceMotion}
+              theme={theme}
+            />
+          </Suspense>
+        ) : scenePlaceholder}
       </div>
       <div className="hero-grid">
         <motion.div className="hero-copy" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>

@@ -428,6 +428,39 @@ h1 {
   margin-top: 8px;
 }
 
+.timeline-more {
+  margin-top: 14px;
+}
+
+.timeline-more summary {
+  width: fit-content;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--panel-bg-soft);
+  color: var(--accent-green);
+  padding: 9px 12px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.timeline-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.timeline-more summary::after {
+  content: " +";
+}
+
+.timeline-more[open] summary::after {
+  content: " -";
+}
+
+.timeline-more ul {
+  margin-top: 14px;
+}
+
 .project-band {
   width: 100%;
   max-width: none;
@@ -510,10 +543,34 @@ h1 {
   z-index: 1;
 }
 
+.project-card-hitbox {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.project-card-hitbox:focus-visible {
+  outline: none;
+}
+
+.project-card-content {
+  display: flex;
+  min-height: 100%;
+  flex: 1;
+  flex-direction: column;
+  pointer-events: none;
+}
+
 .project-card:hover,
-.project-card:focus-visible,
+.project-card:has(.project-card-hitbox:focus-visible),
 .project-card.active {
-  border-color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 58%, var(--text-heading));
   background: color-mix(in srgb, var(--accent) 9%, var(--project-card-active-base));
   outline: none;
   transform: translateY(-4px);
@@ -531,7 +588,7 @@ h1 {
 }
 
 .project-card .project-topline {
-  color: var(--accent);
+  color: color-mix(in srgb, var(--accent) 58%, var(--text-heading));
   letter-spacing: 0.05em;
 }
 

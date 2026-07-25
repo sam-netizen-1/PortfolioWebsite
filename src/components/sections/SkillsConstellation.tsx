@@ -6,7 +6,7 @@ import { getPortfolioIcon } from "../ui/portfolioIcons";
 export function SkillsConstellation() {
   return (
     <section className="content-section" id="skills">
-      <SectionHeading eyebrow="Skills constellation" title="Frontend, platform, AI tooling, and delivery skills grouped for scanning." />
+      <SectionHeading eyebrow="Technical toolkit" title="Frontend skills shaped by production commerce systems." />
       <div className="skill-grid">
         {skillGroups.map((group) => {
           const Icon = getPortfolioIcon(group.icon);

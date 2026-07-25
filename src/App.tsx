@@ -1,5 +1,5 @@
 import { useReducedMotion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Footer, Header } from "./components/layout";
 import { ContactSection, ExperienceTimeline, HeroSection, LinkedInProofSection, ProjectsShowroom, SkillsConstellation } from "./components/sections";
 import { projects } from "./data/resume";
@@ -11,10 +11,30 @@ function App() {
   const reducedMotion = useReducedMotion();
   const { theme, toggleTheme } = useThemePreference();
 
+  useEffect(() => {
+    const scrollToHash = () => {
+      const targetId = decodeURIComponent(window.location.hash.slice(1));
+
+      if (!targetId) return;
+
+      window.requestAnimationFrame(() => {
+        document.getElementById(targetId)?.scrollIntoView({ block: "start" });
+      });
+    };
+
+    scrollToHash();
+    window.addEventListener("hashchange", scrollToHash);
+
+    return () => window.removeEventListener("hashchange", scrollToHash);
+  }, []);
+
   return (
     <div className="app-shell" data-theme={theme}>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <Header theme={theme} onToggleTheme={toggleTheme} />
-      <main>
+      <main id="main-content">
         <HeroSection activeProjectId={activeProjectId} onSelectProject={setActiveProjectId} reduceMotion={Boolean(reducedMotion)} theme={theme} />
         <LinkedInProofSection />
         <ExperienceTimeline />

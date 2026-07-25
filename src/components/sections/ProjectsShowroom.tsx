@@ -75,9 +75,9 @@ export function ProjectsShowroom({ activeProjectId, onSelectProject }: ProjectsS
   return (
     <section ref={sectionRef} className="content-section project-band" id="projects">
       <SectionHeading
-        eyebrow="Project showroom"
-        title="Clickable pods with problem, solution, technology, and impact."
-        description="Each project card is connected to a 3D pod in the command center, keeping the visual system tied to resume substance."
+        eyebrow="Selected work"
+        title="Engineering problems solved across commerce, personalization, and AI."
+        description="Each case study outlines the problem, implementation approach, technology, and resulting impact."
       />
       <div className="project-controls" aria-label="Project focus controls">
         <button type="button" onClick={() => selectProjectAtOffset(-1)}>
@@ -99,35 +99,42 @@ export function ProjectsShowroom({ activeProjectId, onSelectProject }: ProjectsS
           const accentStyle: AccentStyle = { "--accent": project.accent };
 
           return (
-            <button
+            <article
               className={isActive ? "project-card active" : "project-card"}
               key={project.id}
-              type="button"
-              onClick={() => onSelectProject(project.id)}
               style={accentStyle}
             >
-              <span className="project-topline">
-                <Icon size={22} aria-hidden="true" />
-                {isActive ? "Selected pod" : "Open pod"}
-              </span>
-              <h3>{project.title}</h3>
-              <p>{project.short}</p>
-              <dl>
-                <div>
-                  <dt>Problem</dt>
-                  <dd>{project.problem}</dd>
-                </div>
-                <div>
-                  <dt>Solution</dt>
-                  <dd>{project.solution}</dd>
-                </div>
-                <div>
-                  <dt>Impact</dt>
-                  <dd>{project.impact}</dd>
-                </div>
-              </dl>
-              <TechList items={project.tech} label={`${project.title} technologies`} />
-            </button>
+              <button
+                className="project-card-hitbox"
+                type="button"
+                aria-label={`${isActive ? "Selected" : "Open"} ${project.title} case study`}
+                aria-pressed={isActive}
+                onClick={() => onSelectProject(project.id)}
+              />
+              <div className="project-card-content">
+                <span className="project-topline">
+                  <Icon size={22} aria-hidden="true" />
+                  {isActive ? "Selected pod" : "Open pod"}
+                </span>
+                <h3>{project.title}</h3>
+                <p>{project.short}</p>
+                <dl>
+                  <div>
+                    <dt>Problem</dt>
+                    <dd>{project.problem}</dd>
+                  </div>
+                  <div>
+                    <dt>Solution</dt>
+                    <dd>{project.solution}</dd>
+                  </div>
+                  <div>
+                    <dt>Impact</dt>
+                    <dd>{project.impact}</dd>
+                  </div>
+                </dl>
+                <TechList items={project.tech} label={`${project.title} technologies`} />
+              </div>
+            </article>
           );
         })}
       </div>

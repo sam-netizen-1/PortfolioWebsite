@@ -9,7 +9,9 @@ import { StorefrontEngine } from "./StorefrontEngine";
 import { getScenePalette } from "./palette";
 import type { CommandCenterSceneProps } from "./types";
 
-export function SceneContent({ activeProjectId, onSelectProject, reduceMotion, theme }: CommandCenterSceneProps) {
+type SceneContentProps = Omit<CommandCenterSceneProps, "isSceneVisible">;
+
+export function SceneContent({ activeProjectId, onSelectProject, reduceMotion, theme }: SceneContentProps) {
   const palette = getScenePalette(theme);
 
   return (

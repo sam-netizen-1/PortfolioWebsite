@@ -4,8 +4,8 @@ export const profile: Profile = {
   name: "Samkit Kothari",
   role: "Senior Frontend Engineer",
   headline:
-    "Building revenue-impacting ecommerce, personalization, AI content, and storefront performance systems at THG.",
-  location: "Maharashtra, India",
+    "I build high-performance ecommerce platforms, personalization systems, and AI-assisted content workflows that turn frontend engineering into measurable business impact.",
+  location: "Pune/Pimpri-Chinchwad Area, India",
   email: "kotharisamkeet@gmail.com",
   secondaryEmail: "snkothari15@gmail.com",
   phone: "8669129605",
@@ -26,88 +26,113 @@ export const commandModules: CommandModule[] = [
 
 export const metrics: Metric[] = [
   { value: "4+", label: "years frontend engineering", icon: "gauge" },
-  { value: "12+", label: "beauty and luxury sites migrated", icon: "globe" },
+  { value: "10+", label: "beauty and luxury sites migrated", icon: "globe" },
   { value: "2x", label: "personalized campaign ad revenue", icon: "chart" },
   { value: "80%", label: "content production time reduced", icon: "sparkles" },
-  { value: "30+", label: "localized Hydrafacial languages", icon: "map" }
+  { value: "29+", label: "localized Hydrafacial languages", icon: "map" }
 ];
 
 export const socialProof: SocialProof[] = [
   {
-    value: "2K",
+    value: "2.2K+",
     label: "LinkedIn followers",
-    detail: "A public professional audience connected to my frontend engineering, ecommerce, AI tooling, and career-growth work.",
+    detail: "A professional audience connected to my frontend engineering, ecommerce, AI tooling, and career-growth work.",
     icon: "linkedin"
   },
   {
     value: "500+",
     label: "connections",
-    detail: "A broad network across engineering, ecommerce, product, and delivery communities.",
+    detail: "A network spanning engineering, ecommerce, product, design, data, and delivery communities.",
     icon: "users"
   },
   {
     value: "6",
-    label: "recommendations",
-    detail: "Peer and colleague validation around the qualities I try to bring every day: ownership, clarity, and consistent delivery.",
+    label: "received recommendations",
+    detail: "Colleagues highlight technical clarity, frontend expertise, reliability, collaboration, and delivery quality.",
     icon: "quote"
   },
   {
-    value: "THG",
-    label: "current platform",
-    detail: "My current work focuses on commerce storefronts, personalization, analytics, and AI-assisted workflows.",
+    value: "Winner",
+    label: "THG India AI Hackathon 2025",
+    detail: "VibeLabs was recognized for applying generative AI to practical ecommerce content workflows.",
     icon: "building"
   }
 ];
 
 export const recommendationThemes: RecommendationTheme[] = [
   {
-    title: "Technical ownership",
-    body: "I take frontend work beyond UI delivery: migrations, performance tuning, observability, and production follow-through matter to me."
+    title: "Technical clarity",
+    body: "Recommendations highlight clear technical thinking and strong hands-on expertise across Astro, React, and scalable frontend systems."
   },
   {
-    title: "Collaborative engineering",
-    body: "I work closely with design, data, marketing, and other engineers so platform work becomes visible product impact."
+    title: "Reliable collaboration",
+    body: "Colleagues describe me as dependable, helpful, and easy to work with across team boundaries."
   },
   {
-    title: "Commerce impact",
-    body: "I connect engineering decisions to business outcomes: revenue, speed, localization, campaign tooling, and content efficiency."
+    title: "Quality and ownership",
+    body: "Peer feedback consistently points to dedication, high delivery standards, and a focus on maintainable, scalable solutions."
   }
 ];
 
 export const experiences: Experience[] = [
   {
-    company: "THG",
-    role: "Senior Software Engineer",
-    period: "May 2024 - Present",
+    company: "THG Ingenuity",
+    role: "Senior Frontend Engineer",
+    period: "Sep 2025 - Present",
     summary:
-      "Frontend and platform engineering for multi-tenant ecommerce storefronts, personalization, experimentation, and observability.",
+      "Senior ownership across frontend observability, sale-event resilience, AI-assisted engineering workflows, and team delivery.",
     highlights: [
-      "Led React, Astro, Next.js and Tailwind work across multi-tenant storefronts with accessibility, SEO and performance ownership.",
-      "Migrated 10+ beauty and luxury commerce sites and improved TTFB, TTI, SEO, and maintainability.",
-      "Built dynamic personalized ad/content delivery integrated with GTM, resolving legacy integration issues and doubling campaign ad revenue.",
-      "Designed experiment instrumentation, dashboards, RUM, synthetic checks, alerts, runbooks, and sale-event resilience strategy."
+      "Built dashboards, real-user monitoring, synthetic checks, alerts, and runbooks for major sale events.",
+      "Led load testing and spike-protection strategies to improve resilience and incident response.",
+      "Applied GitHub Copilot, ChatGPT, and Claude to component scaffolding, prompt engineering, and faster debugging.",
+      "Mentored junior engineers and collaborated with data, design, and marketing teams on product-driven features."
     ]
   },
   {
-    company: "Coditas Solutions",
-    role: "Software Engineer",
+    company: "NMIMS CDOE",
+    role: "Master of Business Administration, Information Technology",
+    period: "Jun 2026 - Jun 2028",
+    summary:
+      "Postgraduate study connecting information technology, business strategy, management, and organizational decision-making.",
+    highlights: [
+      "Currently pursuing an MBA in Information Technology alongside senior frontend engineering work.",
+      "Building broader business and leadership context for technology, product, and delivery decisions."
+    ]
+  },
+  {
+    company: "THG Ingenuity",
+    role: "Software Engineer - Frontend",
+    period: "May 2024 - Sep 2025",
+    summary:
+      "Frontend platform engineering for multi-tenant ecommerce storefronts, personalization, experimentation, performance, and observability.",
+    highlights: [
+      "Led React, Astro, Next.js, and Tailwind development across multi-tenant storefronts, with ownership of accessibility, SEO, and performance.",
+      "Migrated 10+ beauty and luxury commerce sites and improved TTFB, TTI, SEO, and maintainability.",
+      "Built a personalized ad and content-delivery layer integrated with GTM, resolving legacy issues and doubling personalized campaign revenue.",
+      "Modernized React 16 services to React 18 and refactored legacy class components into modern functional patterns.",
+      "Built server-side fetching, client hydration, data-mapping layers, SDK-style hooks, privacy-compliant fallbacks, and edge caching strategies."
+    ]
+  },
+  {
+    company: "Coditas",
+    role: "Software Engineer / Associate Software Engineer",
     period: "Jul 2022 - May 2024",
     summary:
       "Responsive web applications, reusable component libraries, frontend performance work, and production testing practices.",
     highlights: [
-      "Built React and Next.js applications with Tailwind, MUI, Chakra UI, and reusable frontend systems.",
-      "Improved cross-browser compatibility and performance through code splitting, lazy loading, and testing coverage.",
-      "Contributed to agile delivery, CI/CD practice, and peer code reviews."
+      "Built responsive React and Next.js applications with reusable component systems using Tailwind CSS, MUI, and Chakra UI.",
+      "Improved cross-browser compatibility and performance through code splitting, lazy loading, and automated test coverage.",
+      "Contributed to CI/CD practices, agile delivery, and peer code reviews."
     ]
   },
   {
     company: "SNJB's KBJ College of Engineering, Chandwad",
     role: "Bachelor of Engineering, Computer Engineering",
-    period: "Aug 2018 - Jun 2022",
+    period: "Jun 2018 - Jun 2022",
     summary:
       "Computer engineering foundation across software development, problem solving, algorithms, and team-based project delivery.",
     highlights: [
-      "Graduated with a 9.14 grade while building a strong base in computer science and programming fundamentals.",
+      "Graduated with a 9.14 GPA while building a strong foundation in computer science and programming.",
       "Developed project, collaboration, and analytical skills that shaped the frontend engineering path that followed."
     ]
   }
@@ -121,7 +146,7 @@ export const projects: Project[] = [
     problem: "Each tenant needed distinct themes, content rules, analytics, SEO behavior, and fast storefront delivery without duplicating code.",
     solution:
       "Created a configurable storefront layer with Astro.js, edge deployment, tenant-driven theming, dynamic content, and centralized management.",
-    impact: "Improved site speed, reduced latency, and made brand launches easier to maintain.",
+    impact: "Improved storefront speed and latency while making tenant-specific experiences easier to manage.",
     tech: ["Astro.js", "React", "Next.js", "Tailwind CSS", "Edge rendering", "Analytics"],
     accent: "#58d7cf",
     icon: "layers"
@@ -133,7 +158,7 @@ export const projects: Project[] = [
     problem: "Users needed to find nearby stores, complete dynamic forms, and access localized policy content across many markets.",
     solution:
       "Built a map-based locator with geolocation and filters, dynamic API-driven forms, loyalty flows, and localized privacy sections.",
-    impact: "Delivered 29+ localized languages and a more complete self-service customer journey.",
+    impact: "Delivered privacy content in 29+ languages and a more complete store-discovery and loyalty journey.",
     tech: ["React", "Geolocation", "Dynamic forms", "Localization", "API validation"],
     accent: "#f2b84b",
     icon: "map"
@@ -145,7 +170,7 @@ export const projects: Project[] = [
     problem: "Marketing teams needed to build journeys, segment audiences, and track campaign performance across channels.",
     solution:
       "Created drag-and-drop workflow builder components, CSV/query segmentation tools, email template widgets, and analytics dashboards.",
-    impact: "Helped productize real-time personalization, recommendations, and targeted offers across tenant sites.",
+    impact: "Enabled teams to build targeted journeys, manage audiences, and monitor campaign performance across channels.",
     tech: ["React", "Workflow UI", "CSV uploads", "Segmentation", "Analytics dashboards"],
     accent: "#ff6bb5",
     icon: "workflow"
@@ -157,7 +182,7 @@ export const projects: Project[] = [
     problem: "Ecommerce teams needed faster product copy, email campaigns, edited product visuals, and advertisement content.",
     solution:
       "Built an AI-powered engine using LLMs for SEO product copy, personalized campaign content, prompt improvement, product image editing, and video generation.",
-    impact: "Reduced content production time by 80% while improving content relevance and creative velocity.",
+    impact: "Won the THG India AI Hackathon 2025 and reduced content production time by 80%.",
     tech: ["LLMs", "Prompt engineering", "NLP", "Image pipeline", "Video generation"],
     accent: "#8be28c",
     icon: "bot"
@@ -198,8 +223,8 @@ export const skillGroups: SkillGroup[] = [
     skills: ["ChatGPT", "Claude", "Gemini", "Grok", "GitHub Copilot", "Claude Code CLI", "Codex CLI"]
   },
   {
-    label: "Contact Channels",
-    icon: "mail",
-    skills: ["LinkedIn", "Email", "GitHub", "Resume PDF"]
+    label: "Delivery & Quality",
+    icon: "gauge",
+    skills: ["Accessibility", "SEO", "A/B testing", "RUM", "Synthetic monitoring", "CI/CD", "Agile delivery"]
   }
 ];

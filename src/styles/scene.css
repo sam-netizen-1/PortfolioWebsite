@@ -77,6 +77,33 @@
   letter-spacing: 0.08em;
 }
 
+.scene-preloader {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+  color: var(--text-faint);
+  text-align: center;
+}
+
+.scene-preloader span {
+  width: 48px;
+  height: 48px;
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 32%, transparent);
+  border-top-color: var(--accent-green);
+  border-radius: 50%;
+  animation: scene-loader-spin 1s linear infinite;
+}
+
+.scene-preloader strong {
+  max-width: 180px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 .scene-label {
   display: inline-flex;
   max-width: 140px;

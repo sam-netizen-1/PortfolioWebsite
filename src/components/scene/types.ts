@@ -10,5 +10,6 @@ export type MotionAwareSceneProps = {
 
 export type CommandCenterSceneProps = MotionAwareSceneProps & {
   activeProjectId: ProjectId;
+  isSceneVisible: boolean;
   onSelectProject: ProjectSelectHandler;
 };
