@@ -15,7 +15,7 @@ export const scenePalettes = {
     ambientIntensity: 0.7,
     directionalIntensity: 1.35,
     cyanLightIntensity: 3.2,
-    pinkLightIntensity: 2.4
+    greenLightIntensity: 2.4
   },
   light: {
     fog: "#f4f7ed",
@@ -31,7 +31,7 @@ export const scenePalettes = {
     ambientIntensity: 1.1,
     directionalIntensity: 1.6,
     cyanLightIntensity: 1.9,
-    pinkLightIntensity: 1.35
+    greenLightIntensity: 1.35
   }
 } satisfies Record<
   ThemeMode,
@@ -49,7 +49,7 @@ export const scenePalettes = {
     ambientIntensity: number;
     directionalIntensity: number;
     cyanLightIntensity: number;
-    pinkLightIntensity: number;
+    greenLightIntensity: number;
   }
 >;
 

@@ -32,13 +32,13 @@ export function StorefrontEngine({ reduceMotion, theme }: MotionAwareSceneProps)
       </mesh>
       <mesh position={[0, 0.62, 0]}>
         <octahedronGeometry args={[0.44, 0]} />
-        <meshStandardMaterial color="#f2b84b" emissive="#f2b84b" emissiveIntensity={1.8} roughness={0.18} />
+        <meshStandardMaterial color="#8be28c" emissive="#8be28c" emissiveIntensity={1.8} roughness={0.18} />
       </mesh>
       <Ring radius={1.25} color="#58d7cf" rotation={[Math.PI / 2, 0.18, 0]} />
       <Ring radius={1.65} color="#8be28c" rotation={[Math.PI / 2.25, 0, Math.PI / 8]} />
-      <Ring radius={2.05} color="#ff6bb5" rotation={[Math.PI / 1.75, 0.4, Math.PI / 4]} />
+      <Ring radius={2.05} color="#58d7cf" rotation={[Math.PI / 1.75, 0.4, Math.PI / 4]} />
       <Text position={[0, -0.48, 0]} fontSize={0.12} color={palette.text} anchorX="center" anchorY="middle" maxWidth={2.2}>
-        Storefront Engine
+        Project Map
       </Text>
     </group>
   );

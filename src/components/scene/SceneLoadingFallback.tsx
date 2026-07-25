@@ -5,7 +5,7 @@ export function SceneLoadingFallback() {
     <Html center>
       <div className="scene-loader-panel">
         <span aria-hidden="true" />
-        <strong>Booting command center</strong>
+        <strong>Loading project map</strong>
       </div>
     </Html>
   );

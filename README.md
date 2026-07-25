@@ -1,6 +1,6 @@
 # Samkit Kothari Portfolio
 
-Samkit Kothari's main portfolio presented as a 3D commerce command center for frontend engineering, ecommerce storefronts, personalization, AI content workflows, and performance engineering.
+Samkit Kothari's portfolio uses an interactive 3D project map to present frontend engineering, ecommerce, marketing technology, personalization, AI workflows, and performance work.
 
 ## Stack
 
@@ -13,7 +13,7 @@ Samkit Kothari's main portfolio presented as a 3D commerce command center for fr
 
 ## Highlights
 
-- 3D command center mapped to real projects and resume impact.
+- Interactive 3D project map connected to real case studies and resume impact.
 - Project showroom with problem, solution, technology, and measurable outcome.
 - Experience timeline covering THG, Coditas, and education.
 - Contact section with email, LinkedIn, GitHub, and resume download.
@@ -44,4 +44,4 @@ The local machine may block npm registry access. In that case, deploy to Vercel 
 3. Keep the default Vite settings:
    - Build command: `npm run build`
    - Output directory: `dist`
-4. Open the deployed URL and verify the 3D command center, resume download, project cards, and contact links.
+4. Open the deployed URL and verify the 3D project map, resume download, project cards, and contact links.

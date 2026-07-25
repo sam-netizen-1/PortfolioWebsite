@@ -23,7 +23,7 @@ export default function CommandCenterScene({ isSceneVisible, ...props }: Command
       <div className={isSceneReady ? "scene-loader is-hidden" : "scene-loader"} aria-hidden="true">
         <div className="scene-loader-panel">
           <span aria-hidden="true" />
-          <strong>Booting command center</strong>
+          <strong>Loading project map</strong>
         </div>
       </div>
     </>

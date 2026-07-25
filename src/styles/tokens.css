@@ -28,8 +28,8 @@
   --body-bg:
     linear-gradient(90deg, rgba(139, 226, 140, 0.05) 1px, transparent 1px),
     linear-gradient(0deg, rgba(88, 215, 207, 0.045) 1px, transparent 1px),
-    radial-gradient(circle at 68% 22%, rgba(242, 184, 75, 0.14), transparent 30%),
-    radial-gradient(circle at 12% 76%, rgba(255, 107, 181, 0.1), transparent 28%),
+    radial-gradient(circle at 68% 22%, rgba(88, 215, 207, 0.12), transparent 30%),
+    radial-gradient(circle at 12% 76%, rgba(139, 226, 140, 0.08), transparent 28%),
     var(--page-bg);
   --scene-overlay:
     linear-gradient(90deg, rgba(7, 8, 7, 0.92) 0%, rgba(7, 8, 7, 0.68) 35%, rgba(7, 8, 7, 0.16) 62%, rgba(7, 8, 7, 0.74) 100%),
@@ -66,8 +66,8 @@
   --body-bg:
     linear-gradient(90deg, rgba(32, 122, 60, 0.08) 1px, transparent 1px),
     linear-gradient(0deg, rgba(8, 122, 130, 0.065) 1px, transparent 1px),
-    radial-gradient(circle at 68% 22%, rgba(242, 184, 75, 0.2), transparent 30%),
-    radial-gradient(circle at 12% 76%, rgba(176, 47, 115, 0.12), transparent 28%),
+    radial-gradient(circle at 68% 22%, rgba(8, 122, 130, 0.14), transparent 30%),
+    radial-gradient(circle at 12% 76%, rgba(32, 122, 60, 0.1), transparent 28%),
     var(--page-bg);
   --scene-overlay:
     linear-gradient(90deg, rgba(244, 247, 237, 0.96) 0%, rgba(244, 247, 237, 0.72) 35%, rgba(244, 247, 237, 0.16) 62%, rgba(244, 247, 237, 0.74) 100%),

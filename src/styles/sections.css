@@ -47,7 +47,7 @@ h1 {
 
 .role {
   margin-bottom: 16px;
-  color: var(--accent-amber);
+  color: var(--accent-cyan);
   font-size: clamp(1.15rem, 2.2vw, 1.8rem);
   font-weight: 760;
 }
@@ -217,7 +217,12 @@ h1 {
 
 .proof-card {
   min-height: 210px;
-  padding: 18px;
+  border: 0;
+  border-top: 1px solid var(--border-subtle);
+  border-radius: 0;
+  background: transparent;
+  padding: 18px 0;
+  backdrop-filter: none;
 }
 
 .proof-card svg {
@@ -256,7 +261,7 @@ h1 {
 }
 
 .recommendation-eyebrow {
-  color: var(--accent-amber);
+  color: var(--accent-cyan);
   font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -334,7 +339,7 @@ h1 {
 }
 
 .section-heading span {
-  color: var(--accent-amber);
+  color: var(--accent-green);
   font-size: 0.82rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -357,7 +362,7 @@ h1 {
 .timeline {
   position: relative;
   display: grid;
-  gap: 18px;
+  gap: 0;
 }
 
 .timeline::before {
@@ -367,7 +372,7 @@ h1 {
   left: 22px;
   width: 1px;
   content: "";
-  background: linear-gradient(var(--accent-green), var(--accent-cyan), var(--accent-pink));
+  background: linear-gradient(var(--accent-green), var(--accent-cyan));
 }
 
 .timeline-item {
@@ -375,10 +380,15 @@ h1 {
   display: grid;
   grid-template-columns: 46px minmax(0, 1fr);
   gap: 18px;
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  background: var(--panel-bg);
-  padding: 22px;
+  border: 0;
+  border-bottom: 1px solid var(--border-subtle);
+  border-radius: 0;
+  background: transparent;
+  padding: 28px 0;
+}
+
+.timeline-item:first-child {
+  border-top: 1px solid var(--border-subtle);
 }
 
 .timeline-pin {
@@ -410,7 +420,7 @@ h1 {
 .timeline-item strong {
   display: block;
   margin-bottom: 13px;
-  color: var(--accent-amber);
+  color: var(--text-soft);
 }
 
 .timeline-item p,
@@ -667,7 +677,7 @@ h1 {
 }
 
 .skill-title svg {
-  color: var(--accent-amber);
+  color: var(--accent-cyan);
 }
 
 .skill-title h3 {
@@ -757,7 +767,7 @@ h1 {
 }
 
 .contact-grid span {
-  color: var(--accent-amber);
+  color: var(--accent-cyan);
   font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;

@@ -85,7 +85,7 @@ export function ProjectsShowroom({ activeProjectId, onSelectProject }: ProjectsS
           Previous
         </button>
         <span>
-          Focused pod {activeIndex + 1} of {projects.length}
+          Project {activeIndex + 1} of {projects.length}
         </span>
         <button type="button" onClick={() => selectProjectAtOffset(1)}>
           Next
@@ -114,7 +114,7 @@ export function ProjectsShowroom({ activeProjectId, onSelectProject }: ProjectsS
               <div className="project-card-content">
                 <span className="project-topline">
                   <Icon size={22} aria-hidden="true" />
-                  {isActive ? "Selected pod" : "Open pod"}
+                  {isActive ? "Selected project" : "View case study"}
                 </span>
                 <h3>{project.title}</h3>
                 <p>{project.short}</p>

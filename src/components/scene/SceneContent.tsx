@@ -21,7 +21,7 @@ export function SceneContent({ activeProjectId, onSelectProject, reduceMotion, t
       <ambientLight intensity={palette.ambientIntensity} />
       <directionalLight position={[2.6, 4, 3]} intensity={palette.directionalIntensity} color={palette.directional} />
       <pointLight position={[-3, 1.3, 2]} intensity={palette.cyanLightIntensity} color="#58d7cf" />
-      <pointLight position={[3, 0.4, -2.5]} intensity={palette.pinkLightIntensity} color="#ff6bb5" />
+      <pointLight position={[3, 0.4, -2.5]} intensity={palette.greenLightIntensity} color="#8be28c" />
       <ActiveProjectFocus activeProjectId={activeProjectId} reduceMotion={reduceMotion} theme={theme} />
       <fog attach="fog" args={[palette.fog, 6, 13]} />
       <SceneBootStage reduceMotion={reduceMotion}>

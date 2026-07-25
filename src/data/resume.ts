@@ -4,7 +4,7 @@ export const profile: Profile = {
   name: "Samkit Kothari",
   role: "Senior Frontend Engineer",
   headline:
-    "I build high-performance ecommerce platforms, personalization systems, and AI-assisted content workflows that turn frontend engineering into measurable business impact.",
+    "I build high-performance ecommerce and marketing technology products—from multichannel campaign journeys to AI-assisted email tools—that turn frontend engineering into measurable business impact.",
   location: "Pune/Pimpri-Chinchwad Area, India",
   email: "kotharisamkeet@gmail.com",
   secondaryEmail: "snkothari15@gmail.com",
@@ -18,8 +18,8 @@ export const commandModules: CommandModule[] = [
   { label: "React", detail: "UI systems", color: "#58d7cf" },
   { label: "Astro", detail: "islands", color: "#f2b84b" },
   { label: "Next.js", detail: "commerce apps", color: "#ffffff" },
-  { label: "Personalization", detail: "targeted content", color: "#ff6bb5" },
-  { label: "AI", detail: "content engine", color: "#8be28c" },
+  { label: "MarTech", detail: "campaign journeys", color: "#ff6bb5" },
+  { label: "AI", detail: "email + content agents", color: "#8be28c" },
   { label: "Performance", detail: "TTFB / TTI", color: "#f97316" },
   { label: "Analytics", detail: "RUM + GTM", color: "#a78bfa" }
 ];
@@ -80,11 +80,14 @@ export const experiences: Experience[] = [
     role: "Senior Frontend Engineer",
     period: "Sep 2025 - Present",
     summary:
-      "Senior ownership across frontend observability, sale-event resilience, AI-assisted engineering workflows, and team delivery.",
+      "Senior product and platform ownership across Personify marketing technology, multichannel journeys, frontend resilience, and AI-assisted engineering.",
     highlights: [
+      "Build Personify, a marketing technology platform where traders create and schedule email, push, and SMS campaigns, define customer segments, and orchestrate event-triggered journeys.",
+      "Delivered email heatmaps, campaign drafts, reusable journey templates, email-builder features, and a redesigned campaign experience.",
+      "Strengthened workflow journeys to make complex campaign orchestration more robust, intuitive, and maintainable.",
+      "Currently developing an AI agent for the Personify email builder.",
       "Built dashboards, real-user monitoring, synthetic checks, alerts, and runbooks for major sale events.",
       "Led load testing and spike-protection strategies to improve resilience and incident response.",
-      "Applied GitHub Copilot, ChatGPT, and Claude to component scaffolding, prompt engineering, and faster debugging.",
       "Mentored junior engineers and collaborated with data, design, and marketing teams on product-driven features."
     ]
   },
@@ -140,6 +143,20 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    id: "personify",
+    title: "Personify Marketing Technology Platform",
+    short: "Multichannel campaigns, customer segments, and event-triggered workflow journeys.",
+    problem:
+      "Traders needed one dependable workspace to build and schedule email, push, and SMS campaigns, define target audiences, and automate customer journeys from trigger events.",
+    solution:
+      "Over roughly a year, I contributed email heatmaps, campaign drafts, reusable journey templates, email-builder features, a campaign redesign, and more robust workflow-journey architecture. I am now developing an AI agent for the email builder.",
+    impact:
+      "Made campaign creation and journey management clearer, more resilient, and easier to maintain while advancing AI-assisted email creation.",
+    tech: ["React", "TypeScript", "Email builder", "Customer segmentation", "Event-driven journeys", "AI agents"],
+    accent: "#ff6bb5",
+    icon: "workflow"
+  },
+  {
     id: "storefront",
     title: "Ecommerce Multi-tenant Storefront",
     short: "A scalable storefront platform for multiple beauty brands.",
@@ -162,18 +179,6 @@ export const projects: Project[] = [
     tech: ["React", "Geolocation", "Dynamic forms", "Localization", "API validation"],
     accent: "#f2b84b",
     icon: "map"
-  },
-  {
-    id: "personify",
-    title: "Personify",
-    short: "Workflow builder and campaign orchestration for personalization.",
-    problem: "Marketing teams needed to build journeys, segment audiences, and track campaign performance across channels.",
-    solution:
-      "Created drag-and-drop workflow builder components, CSV/query segmentation tools, email template widgets, and analytics dashboards.",
-    impact: "Enabled teams to build targeted journeys, manage audiences, and monitor campaign performance across channels.",
-    tech: ["React", "Workflow UI", "CSV uploads", "Segmentation", "Analytics dashboards"],
-    accent: "#ff6bb5",
-    icon: "workflow"
   },
   {
     id: "vibelabs",
@@ -215,7 +220,7 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Backend & Platforms",
     icon: "rocket",
-    skills: ["Strapi", "Firebase", "REST APIs", "Git", "GitHub", "GitLab", "GTM", "JIRA"]
+    skills: ["REST APIs", "Event-driven workflows", "Customer segmentation", "Strapi", "Firebase", "GTM", "Git", "GitHub"]
   },
   {
     label: "AI Tooling",

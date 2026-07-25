@@ -24,7 +24,7 @@ export function ActiveProjectBrief({ activeProjectId }: ActiveProjectBriefProps)
         >
           <div className="brief-heading">
             <ActiveIcon size={22} aria-hidden="true" />
-            <span>Active project pod</span>
+            <span>Featured case study</span>
           </div>
           <h2>{activeProject.title}</h2>
           <p>{activeProject.short}</p>

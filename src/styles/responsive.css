@@ -177,7 +177,7 @@
   .timeline-item {
     grid-template-columns: 38px minmax(0, 1fr);
     gap: 14px;
-    padding: 16px;
+    padding: 22px 0;
   }
 
   .timeline-pin {
@@ -198,6 +198,10 @@
   .project-card,
   .skill-card {
     padding: 16px;
+  }
+
+  .proof-card {
+    padding: 16px 0;
   }
 
   .active-brief {

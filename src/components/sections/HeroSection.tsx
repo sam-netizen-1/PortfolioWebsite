@@ -69,7 +69,7 @@ export function HeroSection({ activeProjectId, onSelectProject, reduceMotion, th
         <motion.div className="hero-copy" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
           <div className="eyebrow">
             <BadgeCheck size={18} aria-hidden="true" />
-            Commerce Experience Command Center
+            Frontend • Commerce • Personalization • AI
           </div>
           <h1>{profile.name}</h1>
           <p className="role">{profile.role}</p>
