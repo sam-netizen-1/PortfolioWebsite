@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samkit-kothari.vercel.app/sitemap.xml
