@@ -1,4 +1,4 @@
-import { useCallback, type CSSProperties, type KeyboardEvent } from "react";
+import { useCallback, useRef, type CSSProperties, type KeyboardEvent } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { projects } from "../../data/resume";
 import type { ProjectId } from "../../types/portfolio";
@@ -16,6 +16,7 @@ type AccentStyle = CSSProperties & {
 };
 
 export function ProjectsShowroom({ activeProjectId, onSelectProject }: ProjectsShowroomProps) {
+  const projectCardRefs = useRef(new Map<ProjectId, HTMLElement>());
   const activeIndex = Math.max(
     0,
     projects.findIndex((project) => project.id === activeProjectId)
@@ -23,7 +24,17 @@ export function ProjectsShowroom({ activeProjectId, onSelectProject }: ProjectsS
 
   const selectProjectAtOffset = useCallback((offset: number) => {
     const nextIndex = (activeIndex + offset + projects.length) % projects.length;
-    onSelectProject(projects[nextIndex].id);
+    const nextProjectId = projects[nextIndex].id;
+    onSelectProject(nextProjectId);
+
+    if (!window.matchMedia("(max-width: 760px)").matches) return;
+
+    requestAnimationFrame(() => {
+      projectCardRefs.current.get(nextProjectId)?.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        block: "start",
+      });
+    });
   }, [activeIndex, onSelectProject]);
 
   const handleControlsKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -69,6 +80,10 @@ export function ProjectsShowroom({ activeProjectId, onSelectProject }: ProjectsS
             <article
               className={isActive ? "project-card active" : "project-card"}
               key={project.id}
+              ref={(element) => {
+                if (element) projectCardRefs.current.set(project.id, element);
+                else projectCardRefs.current.delete(project.id);
+              }}
               style={accentStyle}
             >
               <button

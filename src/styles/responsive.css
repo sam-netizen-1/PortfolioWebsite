@@ -168,6 +168,10 @@
     flex: 1;
   }
 
+  .project-card {
+    scroll-margin-top: 82px;
+  }
+
   .timeline-item {
     grid-template-columns: 38px minmax(0, 1fr);
     gap: 14px;
