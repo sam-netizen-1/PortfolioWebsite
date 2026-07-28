@@ -104,6 +104,18 @@
   letter-spacing: 0.1em;
 }
 
+.scene-static-art {
+  position: absolute;
+  inset: 8% 5%;
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 28%, transparent);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent-green) 24%, transparent) 0 2%, transparent 2.5%),
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 11%, color-mix(in srgb, var(--accent-cyan) 14%, transparent) 11.4% 11.8%, transparent 12.2% 18%),
+    linear-gradient(135deg, transparent 48%, color-mix(in srgb, var(--accent-cyan) 24%, transparent) 49% 51%, transparent 52%);
+  opacity: 0.82;
+}
+
 .scene-label {
   display: inline-flex;
   max-width: 140px;

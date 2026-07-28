@@ -1,7 +1,7 @@
 import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
-import { projects } from "../../data/resume";
+import { getProjectById } from "../../data/resume";
 import type { ProjectId } from "../../types/portfolio";
 import type { ThemeMode } from "../../types/theme";
 import { getProjectIndex, getProjectPosition } from "./projectLayout";
@@ -15,7 +15,7 @@ type ActiveProjectBeamProps = {
 export function ActiveProjectBeam({ activeProjectId, reduceMotion, theme }: ActiveProjectBeamProps) {
   const pulse = useRef<THREE.Mesh>(null);
   const progress = useRef(0);
-  const activeProject = projects.find((project) => project.id === activeProjectId) ?? projects[0];
+  const activeProject = getProjectById(activeProjectId);
   const opacity = theme === "light" ? 0.26 : 0.42;
   const pulseOpacity = theme === "light" ? 0.54 : 0.74;
   const { curve, initialPulsePosition } = useMemo(() => {

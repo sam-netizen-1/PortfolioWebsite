@@ -1,7 +1,7 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import * as THREE from "three";
-import { projects } from "../../data/resume";
+import { getProjectById } from "../../data/resume";
 import type { ProjectId } from "../../types/portfolio";
 import type { ThemeMode } from "../../types/theme";
 
@@ -13,7 +13,7 @@ type ActiveProjectFocusProps = {
 
 export function ActiveProjectFocus({ activeProjectId, reduceMotion, theme }: ActiveProjectFocusProps) {
   const light = useRef<THREE.PointLight>(null);
-  const activeProject = projects.find((project) => project.id === activeProjectId) ?? projects[0];
+  const activeProject = getProjectById(activeProjectId);
   const baseIntensity = theme === "light" ? 1.35 : 2.45;
   const ringOpacity = theme === "light" ? 0.18 : 0.3;
 

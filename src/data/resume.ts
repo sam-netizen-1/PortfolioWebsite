@@ -1,14 +1,22 @@
-import type { CommandModule, Experience, Metric, Profile, Project, RecommendationTheme, SkillGroup, SocialProof } from "../types/portfolio";
+import type {
+  CommandModule,
+  Experience,
+  Metric,
+  Profile,
+  Project,
+  ProjectId,
+  RecommendationTheme,
+  SkillGroup,
+  SocialProof
+} from "../types/portfolio";
 
 export const profile: Profile = {
   name: "Samkit Kothari",
-  role: "Senior Frontend Engineer",
+  role: "Senior Frontend Engineer for Ecommerce & MarTech",
   headline:
-    "I build high-performance ecommerce and marketing technology products—from multichannel campaign journeys to AI-assisted email tools—that turn frontend engineering into measurable business impact.",
+    "I build fast, resilient React platforms that improve campaign delivery, personalisation, and revenue.",
   location: "Pune/Pimpri-Chinchwad Area, India",
   email: "kotharisamkeet@gmail.com",
-  secondaryEmail: "snkothari15@gmail.com",
-  phone: "8669129605",
   linkedin: "https://www.linkedin.com/in/samkit-kothari-84b5131b4",
   github: "https://github.com/sam-netizen-1",
   resume: "/samkit-kothari-sse-resume.pdf"
@@ -34,22 +42,22 @@ export const metrics: Metric[] = [
 
 export const socialProof: SocialProof[] = [
   {
-    value: "2.2K+",
-    label: "LinkedIn followers",
-    detail: "A professional audience connected to my frontend engineering, ecommerce, AI tooling, and career-growth work.",
-    icon: "linkedin"
-  },
-  {
-    value: "500+",
-    label: "connections",
-    detail: "A network spanning engineering, ecommerce, product, design, data, and delivery communities.",
-    icon: "users"
-  },
-  {
     value: "6",
-    label: "received recommendations",
-    detail: "Colleagues highlight technical clarity, frontend expertise, reliability, collaboration, and delivery quality.",
+    label: "recommendations received",
+    detail: "Colleagues consistently highlight technical clarity, frontend expertise, reliability, and collaboration.",
     icon: "quote"
+  },
+  {
+    value: "Senior",
+    label: "internal progression at THG",
+    detail: "Progressed from Software Engineer to Senior Frontend Engineer while expanding product and platform ownership.",
+    icon: "rocket"
+  },
+  {
+    value: "10+",
+    label: "ecommerce sites migrated",
+    detail: "Delivered multi-tenant storefront migrations with a focus on performance, SEO, and maintainability.",
+    icon: "globe"
   },
   {
     value: "Winner",
@@ -76,6 +84,7 @@ export const recommendationThemes: RecommendationTheme[] = [
 
 export const experiences: Experience[] = [
   {
+    kind: "work",
     company: "THG Ingenuity",
     role: "Senior Frontend Engineer",
     period: "Sep 2025 - Present",
@@ -92,6 +101,7 @@ export const experiences: Experience[] = [
     ]
   },
   {
+    kind: "education",
     company: "NMIMS CDOE",
     role: "Master of Business Administration, Information Technology",
     period: "Jun 2026 - Jun 2028",
@@ -103,6 +113,7 @@ export const experiences: Experience[] = [
     ]
   },
   {
+    kind: "work",
     company: "THG Ingenuity",
     role: "Software Engineer - Frontend",
     period: "May 2024 - Sep 2025",
@@ -117,6 +128,7 @@ export const experiences: Experience[] = [
     ]
   },
   {
+    kind: "work",
     company: "Coditas",
     role: "Software Engineer / Associate Software Engineer",
     period: "Jul 2022 - May 2024",
@@ -129,6 +141,7 @@ export const experiences: Experience[] = [
     ]
   },
   {
+    kind: "education",
     company: "SNJB's KBJ College of Engineering, Chandwad",
     role: "Bachelor of Engineering, Computer Engineering",
     period: "Jun 2018 - Jun 2022",
@@ -194,6 +207,12 @@ export const projects: Project[] = [
   }
 ];
 
+const projectsById = new Map(projects.map((project) => [project.id, project]));
+
+export function getProjectById(projectId: ProjectId): Project {
+  return projectsById.get(projectId) ?? projects[0];
+}
+
 export const skillGroups: SkillGroup[] = [
   {
     label: "Languages",
@@ -225,7 +244,7 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "AI Tooling",
     icon: "sparkles",
-    skills: ["ChatGPT", "Claude", "Gemini", "Grok", "GitHub Copilot", "Claude Code CLI", "Codex CLI"]
+    skills: ["AI-assisted prototyping", "Email-agent development", "Content workflow automation", "Prompt engineering", "Image and video workflows"]
   },
   {
     label: "Delivery & Quality",

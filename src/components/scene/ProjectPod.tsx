@@ -2,7 +2,7 @@ import { Html } from "@react-three/drei";
 import { ThreeEvent, useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import * as THREE from "three";
-import { projects } from "../../data/resume";
+import { getProjectById } from "../../data/resume";
 import { useBodyCursor } from "../../hooks/useBodyCursor";
 import type { ProjectId } from "../../types/portfolio";
 import type { ThemeMode } from "../../types/theme";
@@ -20,7 +20,7 @@ type ProjectPodProps = {
 };
 
 export function ProjectPod({ projectId, index, activeProjectId, onSelectProject, reduceMotion, theme }: ProjectPodProps) {
-  const project = projects.find((item) => item.id === projectId)!;
+  const project = getProjectById(projectId);
   const group = useRef<THREE.Group>(null);
   const coreMaterial = useRef<THREE.MeshStandardMaterial>(null);
   const [isHovered, setIsHovered] = useState(false);

@@ -1,4 +1,4 @@
-export type ProjectId = string;
+export type ProjectId = "personify" | "storefront" | "hydrafacial" | "vibelabs";
 
 export type PortfolioIconName =
   | "bot"
@@ -24,8 +24,6 @@ export type Profile = {
   headline: string;
   location: string;
   email: string;
-  secondaryEmail: string;
-  phone: string;
   linkedin: string;
   github: string;
   resume: string;
@@ -68,6 +66,7 @@ export type Project = {
 };
 
 export type Experience = {
+  kind: "work" | "education";
   company: string;
   role: string;
   period: string;

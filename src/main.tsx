@@ -8,7 +8,13 @@ import "./styles/scene.css";
 import "./styles/sections.css";
 import "./styles/responsive.css";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+  throw new Error("Unable to start the portfolio: root element was not found.");
+}
+
+ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>

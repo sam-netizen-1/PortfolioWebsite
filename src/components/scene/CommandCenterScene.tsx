@@ -4,15 +4,15 @@ import { SceneContent } from "./SceneContent";
 import { SceneLoadingFallback } from "./SceneLoadingFallback";
 import type { CommandCenterSceneProps } from "./types";
 
-export default function CommandCenterScene({ isSceneVisible, ...props }: CommandCenterSceneProps) {
+export default function CommandCenterScene({ isSceneVisible: _isSceneVisible, ...props }: CommandCenterSceneProps) {
   const [isSceneReady, setIsSceneReady] = useState(false);
 
   return (
     <>
       <Canvas
-        dpr={[1, 1.6]}
-        frameloop={isSceneVisible ? "always" : "demand"}
-        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        dpr={[1, 1.25]}
+        frameloop="demand"
+        gl={{ antialias: false, alpha: true, powerPreference: "default" }}
         className="command-canvas"
         onCreated={() => setIsSceneReady(true)}
       >

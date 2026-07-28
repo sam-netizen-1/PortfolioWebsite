@@ -23,7 +23,8 @@
   .metric-rail,
   .proof-grid,
   .project-grid,
-  .skill-grid {
+  .skill-grid,
+  .education-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -297,10 +298,6 @@
 
   .contact-dock a {
     width: 100%;
-  }
-
-  .project-card:not(.active) {
-    display: none;
   }
 
   .metric-tile {

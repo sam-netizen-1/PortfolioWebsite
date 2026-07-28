@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
+import { useCallback, type CSSProperties, type KeyboardEvent } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { projects } from "../../data/resume";
 import type { ProjectId } from "../../types/portfolio";
@@ -16,8 +16,6 @@ type AccentStyle = CSSProperties & {
 };
 
 export function ProjectsShowroom({ activeProjectId, onSelectProject }: ProjectsShowroomProps) {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [isKeyboardActive, setIsKeyboardActive] = useState(false);
   const activeIndex = Math.max(
     0,
     projects.findIndex((project) => project.id === activeProjectId)
@@ -28,58 +26,27 @@ export function ProjectsShowroom({ activeProjectId, onSelectProject }: ProjectsS
     onSelectProject(projects[nextIndex].id);
   }, [activeIndex, onSelectProject]);
 
-  useEffect(() => {
-    const node = sectionRef.current;
+  const handleControlsKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
 
-    if (!node || typeof IntersectionObserver === "undefined") {
-      setIsKeyboardActive(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsKeyboardActive(entry.isIntersecting);
-    }, { threshold: 0.32 });
-
-    observer.observe(node);
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isKeyboardActive) return undefined;
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const target = event.target;
-      const isEditableTarget =
-        target instanceof HTMLElement &&
-        (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable);
-
-      if (isEditableTarget) return;
-
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        selectProjectAtOffset(-1);
-      }
-
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        selectProjectAtOffset(1);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isKeyboardActive, selectProjectAtOffset]);
+    event.preventDefault();
+    selectProjectAtOffset(event.key === "ArrowLeft" ? -1 : 1);
+  };
 
   return (
-    <section ref={sectionRef} className="content-section project-band" id="projects">
+    <section className="content-section project-band" id="projects">
       <SectionHeading
         eyebrow="Selected work"
         title="Engineering problems solved across commerce, personalization, and AI."
         description="Each case study outlines the problem, implementation approach, technology, and resulting impact."
       />
-      <div className="project-controls" aria-label="Project focus controls">
+      <div
+        className="project-controls"
+        aria-label="Project focus controls"
+        onKeyDown={handleControlsKeyDown}
+        role="group"
+        tabIndex={0}
+      >
         <button type="button" onClick={() => selectProjectAtOffset(-1)}>
           <ArrowLeft size={17} aria-hidden="true" />
           Previous
