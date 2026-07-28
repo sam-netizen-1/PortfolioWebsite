@@ -85,6 +85,14 @@ export function ProjectsShowroom({ activeProjectId, onSelectProject }: ProjectsS
                 </span>
                 <h3>{project.title}</h3>
                 <p>{project.short}</p>
+                <div className="project-workflow" aria-label={`${project.title} workflow`}>
+                  <span className="project-workflow-label">Workflow</span>
+                  <ol>
+                    {project.workflow.map((step) => (
+                      <li key={step}>{step}</li>
+                    ))}
+                  </ol>
+                </div>
                 <dl>
                   <div>
                     <dt>Problem</dt>

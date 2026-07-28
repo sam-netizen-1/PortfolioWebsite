@@ -87,26 +87,17 @@
   }
 
   .hero-section {
-    padding: 88px 16px 42px;
+    min-height: auto;
+    padding: 104px 16px 42px;
   }
 
   .scene-layer {
-    height: min(32svh, 280px);
-    top: 64px;
-    right: -14px;
-    bottom: auto;
-    left: -14px;
-    opacity: 0.82;
-    pointer-events: none;
-  }
-
-  .scene-layer::after {
-    background: var(--scene-overlay-mobile);
+    display: none;
   }
 
   .hero-grid {
     min-height: auto;
-    padding-top: min(25svh, 210px);
+    padding-top: 0;
     gap: 18px;
   }
 
@@ -131,17 +122,19 @@
   }
 
   .metric-rail {
-    grid-template-columns: none;
-    grid-auto-columns: minmax(156px, 58vw);
-    grid-auto-flow: column;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    scroll-snap-type: x proximity;
-    scrollbar-width: thin;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-columns: auto;
+    grid-auto-flow: row;
+    overflow: visible;
+    padding-bottom: 0;
   }
 
   .metric-tile {
-    scroll-snap-align: start;
+    min-height: 110px;
+  }
+
+  .metric-tile:last-child {
+    grid-column: 1 / -1;
   }
 
   .proof-grid {

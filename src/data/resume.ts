@@ -154,6 +154,7 @@ export const projects: Project[] = [
       "Over roughly a year, I contributed email heatmaps, campaign drafts, reusable journey templates, email-builder features, a campaign redesign, and more robust workflow-journey architecture. I am now developing an AI agent for the email builder.",
     impact:
       "Made campaign creation and journey management clearer, more resilient, and easier to maintain while advancing AI-assisted email creation.",
+    workflow: ["Customer signals", "Segments", "Triggered journeys", "Email, SMS & push"],
     tech: ["React", "TypeScript", "Email builder", "Customer segmentation", "Event-driven journeys", "AI agents"],
     accent: "#ff6bb5",
     icon: "workflow"
@@ -166,6 +167,7 @@ export const projects: Project[] = [
     solution:
       "Created a configurable storefront layer with Astro.js, edge deployment, tenant-driven theming, dynamic content, and centralized management.",
     impact: "Improved storefront speed and latency while making tenant-specific experiences easier to manage.",
+    workflow: ["Campaign & merch rules", "Tenant configuration", "Storefront experience", "Product discovery & conversion"],
     tech: ["Astro.js", "React", "Next.js", "Tailwind CSS", "Edge rendering", "Analytics"],
     accent: "#58d7cf",
     icon: "layers"
@@ -178,6 +180,7 @@ export const projects: Project[] = [
     solution:
       "Built a map-based locator with geolocation and filters, dynamic API-driven forms, loyalty flows, and localized privacy sections.",
     impact: "Delivered privacy content in 29+ languages and a more complete store-discovery and loyalty journey.",
+    workflow: ["Location & preferences", "Store filters", "Localized content", "Service discovery"],
     tech: ["React", "Geolocation", "Dynamic forms", "Localization", "API validation"],
     accent: "#f2b84b",
     icon: "map"
@@ -190,6 +193,7 @@ export const projects: Project[] = [
     solution:
       "Built an AI-powered engine using LLMs for SEO product copy, personalized campaign content, prompt improvement, product image editing, and video generation.",
     impact: "Won the THG India AI Hackathon 2025 and reduced content production time by 80%.",
+    workflow: ["Product inputs", "AI drafting", "Creative workflow", "Ready-to-review content"],
     tech: ["LLMs", "Prompt engineering", "NLP", "Image pipeline", "Video generation"],
     accent: "#8be28c",
     icon: "bot"

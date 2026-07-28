@@ -54,6 +54,7 @@ export type Project = {
   problem: string;
   solution: string;
   impact: string;
+  workflow: string[];
   tech: string[];
   accent: string;
   icon: PortfolioIconName;
