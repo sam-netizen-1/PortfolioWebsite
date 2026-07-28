@@ -29,12 +29,6 @@ export type Profile = {
   resume: string;
 };
 
-export type CommandModule = {
-  label: string;
-  detail: string;
-  color: string;
-};
-
 export type Metric = {
   value: string;
   label: string;

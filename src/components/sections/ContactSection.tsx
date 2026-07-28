@@ -1,4 +1,4 @@
-import { Download, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { FileText, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { profile } from "../../data/resume";
 import { SectionHeading } from "../ui/SectionHeading";
 
@@ -23,9 +23,9 @@ const contactLinks = [
   },
   {
     label: "Resume",
-    value: "Download PDF",
+    value: "Open PDF",
     href: profile.resume,
-    Icon: Download
+    Icon: FileText
   }
 ];
 
@@ -54,9 +54,8 @@ export function ContactSection() {
             <a
               href={href}
               key={label}
-              target={href.startsWith("mailto:") || label === "Resume" ? undefined : "_blank"}
-              rel={href.startsWith("mailto:") || label === "Resume" ? undefined : "noreferrer"}
-              download={label === "Resume" ? "samkit-kothari-resume.pdf" : undefined}
+              target={href.startsWith("mailto:") ? undefined : "_blank"}
+              rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
             >
               <Icon size={20} aria-hidden="true" />
               <span>{label}</span>

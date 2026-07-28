@@ -1,5 +1,4 @@
 import type {
-  CommandModule,
   Experience,
   Metric,
   Profile,
@@ -21,16 +20,6 @@ export const profile: Profile = {
   github: "https://github.com/sam-netizen-1",
   resume: "/samkit-kothari-sse-resume.pdf"
 };
-
-export const commandModules: CommandModule[] = [
-  { label: "React", detail: "UI systems", color: "#58d7cf" },
-  { label: "Astro", detail: "islands", color: "#f2b84b" },
-  { label: "Next.js", detail: "commerce apps", color: "#ffffff" },
-  { label: "MarTech", detail: "campaign journeys", color: "#ff6bb5" },
-  { label: "AI", detail: "email + content agents", color: "#8be28c" },
-  { label: "Performance", detail: "TTFB / TTI", color: "#f97316" },
-  { label: "Analytics", detail: "RUM + GTM", color: "#a78bfa" }
-];
 
 export const metrics: Metric[] = [
   { value: "4+", label: "years frontend engineering", icon: "gauge" },

@@ -3,12 +3,10 @@ import { Footer, Header } from "./components/layout";
 import { ContactSection, ExperienceTimeline, HeroSection, LinkedInProofSection, ProjectsShowroom, SkillsConstellation } from "./components/sections";
 import { projects } from "./data/resume";
 import { useThemePreference } from "./hooks/useThemePreference";
-import { useReducedMotionPreference } from "./hooks/useReducedMotionPreference";
 import type { ProjectId } from "./types/portfolio";
 
 function App() {
   const [activeProjectId, setActiveProjectId] = useState<ProjectId>(projects[0].id);
-  const reducedMotion = useReducedMotionPreference();
   const { theme, toggleTheme } = useThemePreference();
 
   useEffect(() => {
@@ -35,7 +33,7 @@ function App() {
       </a>
       <Header theme={theme} onToggleTheme={toggleTheme} />
       <main id="main-content">
-        <HeroSection activeProjectId={activeProjectId} onSelectProject={setActiveProjectId} reduceMotion={reducedMotion} theme={theme} />
+        <HeroSection />
         <ProjectsShowroom activeProjectId={activeProjectId} onSelectProject={setActiveProjectId} />
         <ExperienceTimeline />
         <LinkedInProofSection />

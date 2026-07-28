@@ -1,4 +1,4 @@
-import { Download } from "lucide-react";
+import { FileText } from "lucide-react";
 import { profile } from "../../data/resume";
 import type { ThemeMode } from "../../types/theme";
 import { ThemeToggle } from "../ui/ThemeToggle";
@@ -34,8 +34,8 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
       </nav>
       <div className="header-actions">
         <ThemeToggle theme={theme} onToggle={onToggleTheme} />
-        <a className="icon-link" href={profile.resume} download="samkit-kothari-resume.pdf" aria-label="Download resume">
-          <Download size={18} />
+        <a className="icon-link" href={profile.resume} target="_blank" rel="noreferrer" aria-label="Open resume">
+          <FileText size={18} />
         </a>
       </div>
     </header>
