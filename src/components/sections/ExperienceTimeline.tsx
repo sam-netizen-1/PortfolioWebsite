@@ -1,4 +1,5 @@
-import { experiences } from "../../data/resume";
+import { ArrowUpRight, GraduationCap } from "lucide-react";
+import { experiences, profile } from "../../data/resume";
 import { SectionHeading } from "../ui/SectionHeading";
 
 export function ExperienceTimeline() {
@@ -6,63 +7,57 @@ export function ExperienceTimeline() {
   const education = experiences.filter((experience) => experience.kind === "education");
 
   return (
-    <>
-      <section className="content-section" id="experience">
+    <section className="content-section journey-section" id="journey">
+      <div className="section-intro-grid">
         <SectionHeading
-          eyebrow="Experience"
-          title="Frontend ownership across commerce, MarTech, and platform delivery."
-          description="A progression from frontend delivery into senior product and platform ownership."
+          eyebrow="06 / Journey"
+          title="Growing from screens into systems."
+          description="A progression from frontend delivery into platform ownership, resilience, mentoring, and the business context around technical decisions."
         />
-        <div className="timeline">
+        <a className="journey-resume-link" href={profile.resume} target="_blank" rel="noreferrer">
+          Open the full résumé
+          <ArrowUpRight size={16} aria-hidden="true" />
+        </a>
+      </div>
+
+      <div className="journey-layout">
+        <div className="career-list">
           {workExperience.map((experience, index) => (
-            <article key={`${experience.company}-${experience.role}`} className="timeline-item">
-              <div className="timeline-pin">{index + 1}</div>
-              <div>
-                <p className="period">{experience.period}</p>
-                {experience.company === workExperience[index + 1]?.company ? (
-                  <p className="career-progression">Promoted within {experience.company}</p>
-                ) : null}
+            <article key={`${experience.company}-${experience.role}`} className="career-item">
+              <span className="career-number">0{workExperience.length - index}</span>
+              <div className="career-period">{experience.period}</div>
+              <div className="career-copy">
+                <span>{experience.company}</span>
                 <h3>{experience.role}</h3>
-                <strong>{experience.company}</strong>
                 <p>{experience.summary}</p>
-                <ul className="timeline-highlights">
-                  {experience.highlights.slice(0, 2).map((highlight) => (
+                <ul>
+                  {experience.highlights.map((highlight) => (
                     <li key={highlight}>{highlight}</li>
                   ))}
                 </ul>
-                {experience.highlights.length > 2 ? (
-                  <details className="timeline-more">
-                    <summary>
-                      View {experience.highlights.length - 2} more contribution{experience.highlights.length - 2 === 1 ? "" : "s"}
-                    </summary>
-                    <ul>
-                      {experience.highlights.slice(2).map((highlight) => (
-                        <li key={highlight}>{highlight}</li>
-                      ))}
-                    </ul>
-                  </details>
-                ) : null}
               </div>
             </article>
           ))}
         </div>
-      </section>
-      <section className="content-section education-section" id="education">
-        <SectionHeading
-          eyebrow="Education"
-          title="Engineering foundations with ongoing business and technology study."
-        />
-        <div className="education-grid">
+
+        <aside className="learning-track">
+          <div className="learning-track-heading">
+            <GraduationCap size={22} aria-hidden="true" />
+            <div>
+              <span>Learning track</span>
+              <strong>Engineering with wider context</strong>
+            </div>
+          </div>
           {education.map((item) => (
-            <article className="education-card" key={`${item.company}-${item.role}`}>
-              <p className="period">{item.period}</p>
+            <article key={`${item.company}-${item.role}`}>
+              <span>{item.period}</span>
               <h3>{item.role}</h3>
               <strong>{item.company}</strong>
               <p>{item.summary}</p>
             </article>
           ))}
-        </div>
-      </section>
-    </>
+        </aside>
+      </div>
+    </section>
   );
 }

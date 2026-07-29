@@ -1,25 +1,33 @@
 import { skillGroups } from "../../data/resume";
-import { SectionHeading } from "../ui/SectionHeading";
-import { TechList } from "../ui/TechList";
 import { getPortfolioIcon } from "../ui/portfolioIcons";
 
 export function SkillsConstellation() {
   return (
-    <section className="content-section" id="skills">
-      <SectionHeading eyebrow="Technical toolkit" title="Frontend skills shaped by production commerce systems." />
-      <div className="skill-grid">
-        {skillGroups.map((group) => {
-          const Icon = getPortfolioIcon(group.icon);
-          return (
-            <article className="skill-card" key={group.label}>
-              <div className="skill-title">
-                <Icon size={22} aria-hidden="true" />
-                <h3>{group.label}</h3>
-              </div>
-              <TechList items={group.skills} label={`${group.label} skills`} className="skill-cloud" />
-            </article>
-          );
-        })}
+    <section className="toolkit-section" aria-labelledby="toolkit-title">
+      <div className="content-section toolkit-layout">
+        <div className="toolkit-intro">
+          <span>Working toolkit</span>
+          <h2 id="toolkit-title">Tools are choices, not identity.</h2>
+          <p>
+            I choose technology around the product’s constraints, the team that will own it, and the experience it needs
+            to protect.
+          </p>
+        </div>
+        <div className="toolkit-groups">
+          {skillGroups.map((group) => {
+            const Icon = getPortfolioIcon(group.icon);
+
+            return (
+              <article key={group.label}>
+                <div>
+                  <Icon size={18} aria-hidden="true" />
+                  <h3>{group.label}</h3>
+                </div>
+                <p>{group.skills.join(" · ")}</p>
+              </article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

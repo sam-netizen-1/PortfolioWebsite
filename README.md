@@ -1,47 +1,39 @@
 # Samkit Kothari Portfolio
 
-Samkit Kothari's portfolio uses an interactive 3D project map to present frontend engineering, ecommerce, marketing technology, personalization, AI workflows, and performance work.
+A detailed, personality-led portfolio for Samkit Kothari, Senior Frontend Engineer for Ecommerce and MarTech.
+
+The site is built around a “commerce control room” idea: complex systems are represented as understandable signals, journeys, and decisions. It combines an impact-led homepage with four dedicated case studies, engineering field notes, a personal operating system, recommendations, career history, and contact pathways.
+
+## Experience
+
+- Purposeful commerce-signal map in the hero.
+- Four original project visualizations that protect client confidentiality.
+- Dedicated case-study routes for Personify, the multi-tenant commerce platform, VibeLabs, and Hydrafacial.
+- Decision logs, simplified system models, constraints, outcomes, and learnings.
+- Personal About, working principles, field notes, recommendations, career journey, and toolkit.
+- Light and dark themes, responsive layouts, reduced-motion behavior, and keyboard-accessible interactions.
+- Custom social preview artwork and accurate structured metadata.
 
 ## Stack
 
-- React + Vite + TypeScript
-- React Three Fiber + Drei + Three.js
-- Tailwind CSS
-- Framer Motion
-- Lucide React icons
-- Vercel deployment
+- React 18
+- TypeScript
+- Vite
+- CSS
+- Lucide React
+- Vercel and OpenAI Sites-compatible static delivery
 
-## Highlights
-
-- Interactive 3D project map connected to real case studies and resume impact.
-- Project showroom with problem, solution, technology, and measurable outcome.
-- Experience timeline covering THG, Coditas, and education.
-- Contact section with email, LinkedIn, GitHub, and resume download.
-- Light/dark mode, responsive layout, reduced-motion support, and loading state.
-
-## Structure
-
-- `src/data/` stores resume-backed content.
-- `src/types/` stores shared portfolio types.
-- `src/components/layout/` stores page chrome.
-- `src/components/sections/` stores page sections.
-- `src/components/scene/` stores 3D scene primitives and composition.
-- `src/components/ui/` stores reusable presentational components.
-
-## Local Development
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-The local machine may block npm registry access. In that case, deploy to Vercel from the repository; Vercel will install dependencies during the build.
+## Production build
 
-## Deployment
+```bash
+npm run build
+```
 
-1. Push this repository to GitHub.
-2. Import it into Vercel.
-3. Keep the default Vite settings:
-   - Build command: `npm run build`
-   - Output directory: `dist`
-4. Open the deployed URL and verify the 3D project map, resume download, project cards, and contact links.
+The Vercel configuration and the Sites worker both route case-study URLs back through the single-page application so direct visits to `/work/:project` resolve correctly.
