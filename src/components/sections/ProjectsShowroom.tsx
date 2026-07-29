@@ -55,7 +55,7 @@ export function ProjectsShowroom() {
                       <span key={item}>{item}</span>
                     ))}
                   </div>
-                  <a href={`/work/${project.id}`} aria-label={`Read the ${project.title} case study`}>
+                  <a href={`/work/${project.id}`} aria-label={`Read case study: ${project.title}`}>
                     Read case study
                     <ArrowUpRight size={17} aria-hidden="true" />
                   </a>

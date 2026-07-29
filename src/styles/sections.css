@@ -597,6 +597,10 @@
   background: var(--accent-green);
 }
 
+.operator-card-top .operator-avatar span {
+  color: var(--accent-green);
+}
+
 .operator-card-top > div:last-child {
   display: grid;
   gap: 3px;
@@ -735,7 +739,7 @@
 }
 
 .principle-card > span {
-  color: var(--text-faint);
+  color: var(--text-soft);
   font-family: var(--mono);
   font-size: 0.65rem;
 }
@@ -895,7 +899,7 @@
   gap: 18px;
 }
 
-.testimonial-grid blockquote {
+.testimonial-grid .recommendation-card {
   display: grid;
   min-height: 390px;
   grid-template-rows: auto 1fr auto;
@@ -906,7 +910,7 @@
   padding: 28px;
 }
 
-.testimonial-grid blockquote:nth-child(2) {
+.testimonial-grid .recommendation-card:nth-child(2) {
   background: var(--surface);
 }
 
@@ -918,12 +922,12 @@
 }
 
 .quote-mark span {
-  color: var(--text-faint);
+  color: var(--text-soft);
   font-family: var(--mono);
   font-size: 0.63rem;
 }
 
-.testimonial-grid blockquote > p {
+.testimonial-grid .recommendation-card > p {
   align-self: center;
   color: var(--text-heading);
   font-family: Georgia, "Times New Roman", serif;
@@ -932,18 +936,18 @@
   letter-spacing: -0.025em;
 }
 
-.testimonial-grid blockquote footer {
+.testimonial-grid .recommendation-card footer {
   display: grid;
   gap: 5px;
   padding: 0;
 }
 
-.testimonial-grid blockquote footer strong {
+.testimonial-grid .recommendation-card footer strong {
   color: var(--text-heading);
   font-size: 0.83rem;
 }
 
-.testimonial-grid blockquote footer span {
+.testimonial-grid .recommendation-card footer span {
   color: var(--text-soft);
   font-family: var(--mono);
   font-size: 0.61rem;
@@ -1517,7 +1521,7 @@
 }
 
 .constraint-grid span {
-  color: var(--text-faint);
+  color: var(--text-soft);
   font-family: var(--mono);
   font-size: 0.59rem;
 }

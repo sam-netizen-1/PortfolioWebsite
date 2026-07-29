@@ -38,7 +38,7 @@ function App() {
   }, [project]);
 
   return (
-    <div className="app-shell" data-theme={theme}>
+    <div className="app-shell" data-theme={theme} id="top">
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>

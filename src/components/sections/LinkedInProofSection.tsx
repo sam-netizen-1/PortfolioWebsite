@@ -1,4 +1,4 @@
-import { ArrowUpRight, Quote } from "lucide-react";
+import { ArrowUpRight, MessageSquareText } from "lucide-react";
 import { profile, testimonials } from "../../data/resume";
 import { SectionHeading } from "../ui/SectionHeading";
 
@@ -8,29 +8,29 @@ export function LinkedInProofSection() {
       <div className="content-section">
         <div className="proof-heading-row">
           <SectionHeading
-            eyebrow="05 / In their words"
-            title="The human side of delivery."
-            description="Good systems are collaborative systems. These recommendations describe the working style behind the metrics."
+            eyebrow="05 / Recommendation themes"
+            title="What collaborators noticed."
+            description="Themes distilled from public LinkedIn recommendations: how the work felt, not only what shipped."
           />
           <a href={profile.linkedin} target="_blank" rel="noreferrer">
-            View all 6 recommendations
+            View recommendations on LinkedIn
             <ArrowUpRight size={16} aria-hidden="true" />
           </a>
         </div>
 
         <div className="testimonial-grid">
           {testimonials.map((testimonial, index) => (
-            <blockquote key={testimonial.name}>
+            <article className="recommendation-card" key={testimonial.name}>
               <div className="quote-mark">
-                <Quote size={24} aria-hidden="true" />
+                <MessageSquareText size={24} aria-hidden="true" />
                 <span>0{index + 1}</span>
               </div>
-              <p>“{testimonial.quote}”</p>
+              <p>{testimonial.quote}</p>
               <footer>
                 <strong>{testimonial.name}</strong>
                 <span>{testimonial.context}</span>
               </footer>
-            </blockquote>
+            </article>
           ))}
         </div>
       </div>

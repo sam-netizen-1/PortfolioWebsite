@@ -5,7 +5,7 @@ import { ImpactMetrics } from "./ImpactMetrics";
 
 export function HeroSection() {
   return (
-    <section className="hero-section" id="top">
+    <section className="hero-section">
       <div className="hero-grid">
         <div className="hero-copy hero-copy-enter">
           <div className="hero-kicker">

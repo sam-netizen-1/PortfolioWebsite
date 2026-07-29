@@ -127,13 +127,13 @@ export const testimonials: Testimonial[] = [
     quote:
       "Samkit consistently brought technical clarity, reliability, and a focus on scalable solutions to our cross-team work.",
     name: "Abbas Ali R Sariya",
-    context: "Cross-team collaborator · LinkedIn recommendation"
+    context: "Cross-team collaborator · Public recommendation summarized"
   },
   {
     quote:
       "Strong across Astro and React, always helpful, dependable, and willing to go beyond the immediate task.",
     name: "Akshat Vijayvergiya",
-    context: "Frontend colleague · LinkedIn recommendation"
+    context: "Frontend colleague · Public recommendation summarized"
   }
 ];
 

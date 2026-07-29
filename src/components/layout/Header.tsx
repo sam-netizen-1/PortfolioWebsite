@@ -22,7 +22,11 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
 
   return (
     <header className="site-header">
-      <a href="/" className="brand-lockup" aria-label="Samkit Kothari portfolio home">
+      <a
+        href="/"
+        className="brand-lockup"
+        aria-label="SK · Samkit Kothari · Frontend systems · Pune · portfolio home"
+      >
         <span className="brand-mark">SK</span>
         <span className="brand-copy">
           <strong>Samkit Kothari</strong>
