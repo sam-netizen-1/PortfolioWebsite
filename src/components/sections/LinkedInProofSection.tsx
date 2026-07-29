@@ -1,46 +1,38 @@
-import { ArrowUpRight } from "lucide-react";
-import { profile, recommendationThemes, socialProof } from "../../data/resume";
+import { ArrowUpRight, Quote } from "lucide-react";
+import { profile, testimonials } from "../../data/resume";
 import { SectionHeading } from "../ui/SectionHeading";
-import { getPortfolioIcon } from "../ui/portfolioIcons";
 
 export function LinkedInProofSection() {
   return (
-    <section className="content-section proof-section" id="proof">
-      <SectionHeading
-        eyebrow="Professional footprint"
-        title="The public profile behind my engineering work."
-        description="A current view of the network, recommendations, and peer feedback connected to my frontend and ecommerce work."
-      />
-      <div className="proof-grid">
-        {socialProof.map((proof) => {
-          const Icon = getPortfolioIcon(proof.icon);
-          return (
-            <article className="proof-card" key={proof.label}>
-              <Icon size={20} aria-hidden="true" />
-              <strong>{proof.value}</strong>
-              <span>{proof.label}</span>
-              <p>{proof.detail}</p>
-            </article>
-          );
-        })}
-      </div>
-      <div className="recommendation-panel">
-        <div>
-          <span className="recommendation-eyebrow">How I work</span>
-          <h3>How I approach engineering and product delivery.</h3>
+    <section className="proof-section">
+      <div className="content-section">
+        <div className="proof-heading-row">
+          <SectionHeading
+            eyebrow="05 / In their words"
+            title="The human side of delivery."
+            description="Good systems are collaborative systems. These recommendations describe the working style behind the metrics."
+          />
+          <a href={profile.linkedin} target="_blank" rel="noreferrer">
+            View all 6 recommendations
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
         </div>
-        <div className="recommendation-grid">
-          {recommendationThemes.map((theme) => (
-            <article key={theme.title}>
-              <h4>{theme.title}</h4>
-              <p>{theme.body}</p>
-            </article>
+
+        <div className="testimonial-grid">
+          {testimonials.map((testimonial, index) => (
+            <blockquote key={testimonial.name}>
+              <div className="quote-mark">
+                <Quote size={24} aria-hidden="true" />
+                <span>0{index + 1}</span>
+              </div>
+              <p>“{testimonial.quote}”</p>
+              <footer>
+                <strong>{testimonial.name}</strong>
+                <span>{testimonial.context}</span>
+              </footer>
+            </blockquote>
           ))}
         </div>
-        <a href={profile.linkedin} target="_blank" rel="noreferrer">
-          Open LinkedIn
-          <ArrowUpRight size={16} aria-hidden="true" />
-        </a>
       </div>
     </section>
   );

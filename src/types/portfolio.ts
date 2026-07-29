@@ -22,42 +22,63 @@ export type Profile = {
   name: string;
   role: string;
   headline: string;
+  introduction: string;
   location: string;
   email: string;
   linkedin: string;
   github: string;
   resume: string;
+  availability: string;
+  currently: Array<{
+    label: string;
+    value: string;
+  }>;
 };
 
 export type Metric = {
-  value: string;
-  label: string;
-  icon: PortfolioIconName;
-};
-
-export type SocialProof = {
   value: string;
   label: string;
   detail: string;
   icon: PortfolioIconName;
 };
 
-export type RecommendationTheme = {
+export type ProjectMetric = {
+  value: string;
+  label: string;
+};
+
+export type ProjectDecision = {
+  index: string;
   title: string;
   body: string;
+  signal: string;
 };
 
 export type Project = {
   id: ProjectId;
   title: string;
+  eyebrow: string;
   short: string;
+  thesis: string;
+  outcome: string;
+  role: string;
+  timeline: string;
+  team: string;
+  status: string;
   problem: string;
   solution: string;
   impact: string;
+  constraints: string[];
+  decisions: ProjectDecision[];
   workflow: string[];
+  architecture: string[];
+  results: ProjectMetric[];
   tech: string[];
   accent: string;
   icon: PortfolioIconName;
+  confidentiality: string;
+  learning: string;
+  next: string;
 };
 
 export type Experience = {
@@ -73,4 +94,25 @@ export type SkillGroup = {
   label: string;
   icon: PortfolioIconName;
   skills: string[];
+};
+
+export type Principle = {
+  index: string;
+  title: string;
+  body: string;
+};
+
+export type FieldNote = {
+  index: string;
+  title: string;
+  category: string;
+  readTime: string;
+  excerpt: string;
+  paragraphs: string[];
+};
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+  context: string;
 };
