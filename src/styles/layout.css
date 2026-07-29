@@ -12,11 +12,8 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(0deg, var(--grid-line) 1px, transparent 1px),
-    radial-gradient(circle at 74% 9%, color-mix(in srgb, var(--accent-cyan) 9%, transparent), transparent 28%),
+    radial-gradient(circle at 76% 4%, color-mix(in srgb, var(--accent-green) 3.5%, transparent), transparent 29%),
     var(--page-bg);
-  background-size: 52px 52px, 52px 52px, auto, auto;
   color: var(--text-primary);
 }
 
@@ -90,13 +87,13 @@ section[id] {
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--accent-cyan);
+  outline: 2px solid var(--accent-green);
   outline-offset: 4px;
 }
 
 .site-header {
   position: fixed;
-  top: 16px;
+  top: 14px;
   left: 50%;
   z-index: 100;
   display: grid;
@@ -106,11 +103,11 @@ summary:focus-visible {
   align-items: center;
   gap: 24px;
   border: 1px solid var(--border-soft);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   background: var(--surface-glass);
   padding: 9px 10px;
-  box-shadow: 0 14px 54px rgba(0, 0, 0, 0.14);
-  backdrop-filter: blur(22px);
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(18px);
   transform: translateX(-50%);
 }
 
@@ -129,13 +126,12 @@ summary:focus-visible {
   flex: 0 0 auto;
   place-items: center;
   border: 1px solid color-mix(in srgb, var(--accent-green) 46%, transparent);
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--accent-green) 7%, var(--surface));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent-green) 5%, var(--surface));
   color: var(--accent-green);
   font-family: var(--mono);
   font-size: 0.88rem;
   font-weight: 800;
-  box-shadow: inset 0 0 20px color-mix(in srgb, var(--accent-green) 5%, transparent);
 }
 
 .brand-mark::after {
@@ -184,12 +180,14 @@ summary:focus-visible {
   padding: 0 11px;
   font-size: 0.82rem;
   font-weight: 700;
-  transition: color 160ms ease, background 160ms ease;
+  transition:
+    color var(--motion-fast) ease,
+    background var(--motion-fast) ease;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  background: color-mix(in srgb, var(--accent-green) 8%, transparent);
+  background: color-mix(in srgb, var(--accent-green) 5%, transparent);
   color: var(--text-heading);
   outline: none;
 }
@@ -217,7 +215,10 @@ summary:focus-visible {
   color: var(--text-muted);
   padding: 0 12px;
   cursor: pointer;
-  transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+  transition:
+    border-color var(--motion-fast) ease,
+    color var(--motion-fast) ease,
+    background var(--motion-fast) ease;
 }
 
 .theme-toggle:hover,
@@ -244,14 +245,16 @@ summary:focus-visible {
   padding: 0 14px;
   font-size: 0.78rem;
   font-weight: 850;
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  transition:
+    transform var(--motion-fast) var(--ease-out),
+    box-shadow var(--motion-fast) ease;
 }
 
 .header-hello:hover,
 .header-hello:focus-visible {
   outline: none;
-  box-shadow: 0 10px 26px color-mix(in srgb, var(--accent-green) 18%, transparent);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-green) 10%, transparent);
+  transform: translateY(-1px);
 }
 
 .menu-toggle {

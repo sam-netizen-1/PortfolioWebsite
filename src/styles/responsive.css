@@ -69,10 +69,6 @@
 }
 
 @media (max-width: 900px) {
-  body {
-    background-size: 42px 42px, 42px 42px, auto, auto;
-  }
-
   .brand-copy {
     display: none;
   }
@@ -212,7 +208,7 @@
     width: min(calc(100% - 18px), var(--max-width));
     min-height: 58px;
     grid-template-columns: auto 1fr;
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     padding: 7px;
   }
 
@@ -229,7 +225,7 @@
     display: none;
     align-items: stretch;
     border: 1px solid var(--border-soft);
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     background: var(--surface-glass);
     padding: 8px;
     box-shadow: var(--shadow-card);

@@ -258,7 +258,7 @@ export const projects: Project[] = [
       { value: "AI", label: "email agent in development" }
     ],
     tech: ["React", "TypeScript", "Email builder", "Segmentation", "Event-driven journeys", "AI agents"],
-    accent: "#f578c5",
+    accent: "#a98698",
     icon: "workflow",
     confidentiality:
       "The interface shown here is an original, redacted system visualization. It communicates the product model without exposing proprietary screens or customer data.",
@@ -329,7 +329,7 @@ export const projects: Project[] = [
       { value: "18", label: "React version reached from 16" }
     ],
     tech: ["Astro", "React", "Next.js", "Tailwind", "Edge rendering", "Analytics", "RUM"],
-    accent: "#5be7d7",
+    accent: "#82aaa1",
     icon: "layers",
     confidentiality:
       "Brand names and production screens are intentionally minimized. The diagrams focus on the platform decisions and measurable outcomes I can discuss publicly.",
@@ -400,7 +400,7 @@ export const projects: Project[] = [
       { value: "4", label: "creative output types" }
     ],
     tech: ["LLMs", "Prompt engineering", "NLP", "Image pipelines", "Video generation", "React"],
-    accent: "#b8ff65",
+    accent: "#b6dc7b",
     icon: "bot",
     confidentiality:
       "This case study uses a purpose-built visualization rather than internal prototype screens. Publicly shared capabilities and outcomes remain the source of truth.",
@@ -471,7 +471,7 @@ export const projects: Project[] = [
       { value: "API", label: "driven forms and validation" }
     ],
     tech: ["React", "Geolocation", "Dynamic forms", "Localization", "API validation"],
-    accent: "#ffb15c",
+    accent: "#b99a70",
     icon: "map",
     confidentiality:
       "The visual is a reconstructed experience map rather than a production capture. It demonstrates the interaction model without reproducing client assets.",

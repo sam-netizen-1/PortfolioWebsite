@@ -4,11 +4,11 @@
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--accent-cyan) 5%, transparent) 1px, transparent 1px),
-    linear-gradient(0deg, color-mix(in srgb, var(--accent-cyan) 5%, transparent) 1px, transparent 1px),
-    color-mix(in srgb, var(--surface) 92%, transparent);
+    linear-gradient(90deg, color-mix(in srgb, var(--accent-green) 2.5%, transparent) 1px, transparent 1px),
+    linear-gradient(0deg, color-mix(in srgb, var(--accent-green) 2.5%, transparent) 1px, transparent 1px),
+    var(--surface);
   background-size: 34px 34px, 34px 34px, auto;
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.16);
   overflow: hidden;
 }
 
@@ -16,9 +16,7 @@
   position: absolute;
   inset: 46px 0 36px;
   z-index: 0;
-  background:
-    radial-gradient(circle at 52% 48%, color-mix(in srgb, var(--accent-green) 11%, transparent), transparent 28%),
-    linear-gradient(130deg, transparent 30%, color-mix(in srgb, var(--accent-cyan) 6%, transparent) 49%, transparent 68%);
+  background: radial-gradient(circle at 52% 48%, color-mix(in srgb, var(--accent-green) 6%, transparent), transparent 28%);
   content: "";
 }
 
@@ -52,11 +50,11 @@
 }
 
 .window-dots i:first-child {
-  background: var(--accent-pink);
+  background: var(--text-faint);
 }
 
 .window-dots i:nth-child(2) {
-  background: var(--accent-orange);
+  background: var(--text-faint);
 }
 
 .window-dots i:last-child {
@@ -79,13 +77,11 @@
   height: 7px;
   border-radius: 50%;
   background: var(--accent-green);
-  box-shadow: 0 0 10px color-mix(in srgb, var(--accent-green) 70%, transparent);
-  animation: status-pulse 2.2s ease-in-out infinite;
+  animation: status-pulse 3.4s ease-in-out infinite;
 }
 
 .status-warm {
-  background: var(--accent-orange);
-  box-shadow: 0 0 10px color-mix(in srgb, var(--accent-orange) 60%, transparent);
+  background: var(--accent-green);
   animation-delay: 650ms;
 }
 
@@ -112,7 +108,7 @@
   position: absolute;
   top: 50%;
   left: 51%;
-  border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-green) 12%, transparent);
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
@@ -135,18 +131,17 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent-cyan);
-  box-shadow: 0 0 16px var(--accent-cyan);
+  background: color-mix(in srgb, var(--accent-green) 72%, var(--text-soft));
   content: "";
 }
 
 .orbit-one::after {
-  animation: orbit-marker 8s linear infinite;
+  animation: orbit-marker 18s linear infinite;
   transform-origin: 4px 169px;
 }
 
 .orbit-two::after {
-  animation: orbit-marker 6s linear infinite reverse;
+  opacity: 0.45;
   transform-origin: 4px 114px;
 }
 
@@ -160,8 +155,8 @@
   position: absolute;
   z-index: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
-  opacity: 0.35;
+  background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+  opacity: 0.14;
   transform-origin: left center;
 }
 
@@ -193,15 +188,14 @@
   align-items: center;
   border: 1px solid var(--border-soft);
   border-radius: 13px;
-  background: color-mix(in srgb, var(--surface-2) 92%, transparent);
+  background: color-mix(in srgb, var(--surface-2) 96%, transparent);
   padding: 10px 12px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(12px);
 }
 
 .signal-node svg {
   grid-row: 1 / span 2;
-  color: var(--accent-cyan);
+  color: var(--text-soft);
 }
 
 .signal-node span:not(.channel-icons) {
@@ -232,7 +226,7 @@
 }
 
 .node-journey svg {
-  color: var(--accent-pink);
+  color: var(--text-soft);
 }
 
 .node-channel {
@@ -254,13 +248,11 @@
   width: 118px;
   height: 118px;
   place-items: center;
-  border: 1px solid color-mix(in srgb, var(--accent-green) 52%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-green) 34%, transparent);
   border-radius: 50%;
-  background:
-    radial-gradient(circle, color-mix(in srgb, var(--accent-green) 18%, var(--surface)) 0 42%, var(--surface) 44%);
+  background: color-mix(in srgb, var(--accent-green) 6%, var(--surface));
   box-shadow:
-    0 0 0 12px color-mix(in srgb, var(--accent-green) 4%, transparent),
-    0 0 42px color-mix(in srgb, var(--accent-green) 14%, transparent);
+    0 0 0 10px color-mix(in srgb, var(--accent-green) 3%, transparent);
   transform: translate(-50%, -50%);
 }
 
@@ -289,7 +281,6 @@
   height: 8px;
   border-radius: 50%;
   background: var(--accent-green);
-  box-shadow: 0 0 14px var(--accent-green);
 }
 
 .signal-map-footer {
@@ -322,13 +313,12 @@
   position: relative;
   min-height: 330px;
   border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border-subtle));
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--accent) 5%, transparent) 1px, transparent 1px),
-    linear-gradient(0deg, color-mix(in srgb, var(--accent) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 2.5%, transparent) 1px, transparent 1px),
+    linear-gradient(0deg, color-mix(in srgb, var(--accent) 2.5%, transparent) 1px, transparent 1px),
     color-mix(in srgb, var(--surface) 94%, var(--page-bg-deep));
   background-size: 28px 28px, 28px 28px, auto;
-  box-shadow: var(--shadow-card);
   overflow: hidden;
 }
 
@@ -376,7 +366,6 @@
   border-radius: 11px;
   background: var(--surface-2);
   padding: 9px 10px;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
 }
 
 .journey-step svg {
@@ -412,7 +401,7 @@
 }
 
 .journey-agent svg {
-  color: var(--accent-pink);
+  color: var(--accent);
 }
 
 .journey-channels {
@@ -440,7 +429,7 @@
   z-index: 1;
   height: 1px;
   background: linear-gradient(90deg, var(--accent), transparent);
-  opacity: 0.52;
+  opacity: 0.3;
   transform-origin: left center;
 }
 
@@ -509,15 +498,15 @@
 }
 
 .tenant-one {
-  background: var(--accent-pink);
+  background: var(--text-soft);
 }
 
 .tenant-two {
-  background: var(--accent-cyan);
+  background: var(--accent);
 }
 
 .tenant-three {
-  background: var(--accent-orange);
+  background: var(--text-faint);
 }
 
 .storefront-shell {
@@ -738,7 +727,7 @@
   height: 7px;
   border-radius: 50%;
   background: var(--accent);
-  animation: flow-dot 2.4s ease-in-out infinite;
+  animation: flow-dot 4s ease-in-out infinite;
 }
 
 @keyframes flow-dot {
