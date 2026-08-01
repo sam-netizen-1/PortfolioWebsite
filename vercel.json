@@ -2,9 +2,22 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/((?!.*\\.).*)",
+      "source": "/work/personify",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/work/storefront",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/work/vibelabs",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/work/hydrafacial",
       "destination": "/index.html"
     }
   ]

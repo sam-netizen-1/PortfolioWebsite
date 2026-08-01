@@ -35,17 +35,17 @@ export function ContactSection() {
         </div>
 
         <div className="contact-links" aria-label="Contact and profile links">
-          <a href={profile.linkedin} target="_blank" rel="noreferrer">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
             <Linkedin size={17} aria-hidden="true" />
             LinkedIn
             <ArrowUpRight size={14} aria-hidden="true" />
           </a>
-          <a href={profile.github} target="_blank" rel="noreferrer">
+          <a href={profile.github} target="_blank" rel="noopener noreferrer">
             <Github size={17} aria-hidden="true" />
             GitHub
             <ArrowUpRight size={14} aria-hidden="true" />
           </a>
-          <a href={profile.resume} target="_blank" rel="noreferrer">
+          <a href={profile.resume} target="_blank" rel="noopener noreferrer">
             <FileText size={17} aria-hidden="true" />
             Résumé
             <ArrowUpRight size={14} aria-hidden="true" />

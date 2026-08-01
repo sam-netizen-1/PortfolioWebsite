@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import type { CSSProperties } from "react";
-import { projects } from "../../data/resume";
+import { profile, projects } from "../../data/resume";
 import { ProjectVisual } from "../ui/ProjectVisual";
 import { SectionHeading } from "../ui/SectionHeading";
 
@@ -14,8 +14,8 @@ export function ProjectsShowroom() {
       <div className="section-intro-grid">
         <SectionHeading
           eyebrow="01 / Selected work"
-          title="Evidence, not just outcomes."
-          description="Four stories about making complicated systems easier to use, extend, and trust. Each case study shows the constraints, decisions, and learning behind the result."
+          title="Case studies with decisions and results."
+          description="Four stories about making complicated systems easier to use, extend, and trust. Each case study shows the problem, my contribution, the constraints, and the outcome."
         />
         <p className="section-aside">
           The production interfaces are confidential. These original visualizations explain the systems without exposing proprietary
@@ -37,7 +37,9 @@ export function ProjectsShowroom() {
               <div className="project-card-copy">
                 <div className="project-card-meta">
                   <span>{project.eyebrow}</span>
-                  <span>{project.timeline}</span>
+                  <span>
+                    Case study {String(index + 1).padStart(2, "0")} · {project.timeline}
+                  </span>
                 </div>
                 <h3>{project.title}</h3>
                 <p>{project.short}</p>
@@ -64,6 +66,21 @@ export function ProjectsShowroom() {
             </article>
           );
         })}
+      </div>
+
+      <div className="projects-cta">
+        <span>Want the quick version?</span>
+        <p>Start with the résumé, or reach out if you want to talk through the decisions behind the work.</p>
+        <div>
+          <a href={profile.resume} target="_blank" rel="noopener noreferrer">
+            Open résumé
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+          <a href={`mailto:${profile.email}`}>
+            Get in touch
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -25,14 +25,18 @@ export function HeroSection() {
 
           <div className="hero-actions">
             <a className="primary-action" href="#work">
-              See how I solve problems
+              View selected work
               <ArrowDownRight size={18} aria-hidden="true" />
             </a>
-            <a className="secondary-action" href={profile.resume} target="_blank" rel="noreferrer">
+            <a className="secondary-action" href={profile.resume} target="_blank" rel="noopener noreferrer">
               <FileText size={17} aria-hidden="true" />
-              Read résumé
+              Open résumé
             </a>
           </div>
+
+          <p className="hero-cta-note">
+            Looking for a senior frontend or platform engineer? <a href={`mailto:${profile.email}`}>Let&apos;s talk.</a>
+          </p>
 
           <div className="hero-location">
             <MapPin size={15} aria-hidden="true" />
@@ -59,7 +63,7 @@ export function HeroSection() {
         <a
           href="https://www.linkedin.com/posts/samkit-kothari-84b5131b4_top-vc-reveals-how-to-win-the-ai-game-activity-7408164449699864577-WU58"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           aria-label="Read Samkit's thinking on agentic commerce"
         >
           <ArrowUpRight size={18} aria-hidden="true" />

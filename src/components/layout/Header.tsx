@@ -40,7 +40,7 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
             {item.label}
           </a>
         ))}
-        <a className="nav-resume" href={profile.resume} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>
+        <a className="nav-resume" href={profile.resume} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>
           Résumé
           <ArrowUpRight size={14} aria-hidden="true" />
         </a>

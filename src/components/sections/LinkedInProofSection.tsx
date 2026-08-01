@@ -12,7 +12,7 @@ export function LinkedInProofSection() {
             title="What collaborators noticed."
             description="Themes distilled from public LinkedIn recommendations: how the work felt, not only what shipped."
           />
-          <a href={profile.linkedin} target="_blank" rel="noreferrer">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
             View recommendations on LinkedIn
             <ArrowUpRight size={16} aria-hidden="true" />
           </a>

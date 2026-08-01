@@ -12,17 +12,17 @@ import type {
 
 export const profile: Profile = {
   name: "Samkit Kothari",
-  role: "Senior Frontend Engineer for Ecommerce & MarTech",
+  role: "Senior Frontend Engineer · Ecommerce, MarTech & Applied AI",
   headline:
     "I turn high-stakes commerce complexity into fast, calm, useful interfaces.",
   introduction:
-    "I work where frontend architecture, campaign operations, storefront performance, and practical AI meet—making complicated systems feel dependable for the people using them.",
+    "I build the frontend platforms, campaign tools, and storefront experiences that make modern commerce easier to run and easier to trust.",
   location: "Pune, India",
   email: "kotharisamkeet@gmail.com",
   linkedin: "https://www.linkedin.com/in/samkit-kothari-84b5131b4",
   github: "https://github.com/sam-netizen-1",
   resume: "/samkit-kothari-sse-resume.pdf",
-  availability: "Open to thoughtful product, platform, and frontend conversations",
+  availability: "Open to senior frontend, platform, and product engineering conversations",
   currently: [
     { label: "Building", value: "An AI agent for campaign email creation" },
     { label: "Learning", value: "Business strategy through an MBA in IT" },

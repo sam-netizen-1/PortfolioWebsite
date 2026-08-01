@@ -15,7 +15,7 @@ export function FieldNotesSection() {
           className="notes-linkedin-link"
           href="https://www.linkedin.com/posts/samkit-kothari-84b5131b4_top-vc-reveals-how-to-win-the-ai-game-activity-7408164449699864577-WU58"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           Follow the conversation on LinkedIn
           <ArrowUpRight size={16} aria-hidden="true" />

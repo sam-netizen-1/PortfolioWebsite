@@ -1,4 +1,5 @@
 const HTML_ACCEPT = "text/html";
+const CASE_STUDY_PATH = /^\/work\/(?:personify|storefront|vibelabs|hydrafacial)\/?$/;
 
 export default {
   async fetch(request, env) {
@@ -10,6 +11,20 @@ export default {
     }
 
     const fallbackUrl = new URL("/", request.url);
-    return env.ASSETS.fetch(new Request(fallbackUrl, request));
+    const fallbackResponse = await env.ASSETS.fetch(new Request(fallbackUrl, request));
+    const isCaseStudy = CASE_STUDY_PATH.test(new URL(request.url).pathname);
+
+    if (isCaseStudy) {
+      return fallbackResponse;
+    }
+
+    const headers = new Headers(fallbackResponse.headers);
+    headers.set("X-Robots-Tag", "noindex");
+
+    return new Response(fallbackResponse.body, {
+      headers,
+      status: 404,
+      statusText: "Not Found",
+    });
   }
 };

@@ -91,6 +91,18 @@
     max-width: 720px;
   }
 
+  .projects-cta {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projects-cta > div {
+    justify-content: flex-start;
+  }
+
+  .projects-cta > span {
+    grid-column: 1 / -1;
+  }
+
   .current-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -288,6 +300,19 @@
 
   .hero-summary {
     font-size: 0.98rem;
+  }
+
+  .hero-cta-note {
+    max-width: 380px;
+  }
+
+  .projects-cta {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .projects-cta > span {
+    grid-column: auto;
   }
 
   .hero-actions {
@@ -552,6 +577,13 @@
 
   .case-next > a {
     width: fit-content;
+  }
+
+  .not-found-page {
+    width: min(calc(100% - 22px), var(--max-width));
+    min-height: 72vh;
+    padding-top: 116px;
+    padding-bottom: 72px;
   }
 }
 

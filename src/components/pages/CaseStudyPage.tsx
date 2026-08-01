@@ -21,6 +21,10 @@ export function CaseStudyPage({ project }: CaseStudyPageProps) {
   const nextProject = getProjectById(project.next as Project["id"]);
 
   useEffect(() => {
+    const siteTitle = `${profile.name} | Frontend Systems for Commerce & MarTech`;
+    const siteDescription =
+      "Samkit Kothari is a Senior Frontend Engineer building calm, resilient systems for ecommerce, MarTech, personalization, and practical AI.";
+    const siteUrl = window.location.origin + "/";
     const pageTitle = `${project.title} Case Study | ${profile.name}`;
     const pageUrl = `${window.location.origin}/work/${project.id}`;
     const setMeta = (selector: string, value: string) => {
@@ -38,7 +42,16 @@ export function CaseStudyPage({ project }: CaseStudyPageProps) {
     window.scrollTo({ top: 0, behavior: "auto" });
 
     return () => {
-      document.title = `${profile.name} | Frontend Systems for Commerce & MarTech`;
+      document.title = siteTitle;
+      setMeta('meta[name="description"]', siteDescription);
+      setMeta('meta[property="og:title"]', siteTitle);
+      setMeta('meta[property="og:description"]',
+        "Commerce gets complicated. I make the interface feel simple. Explore detailed case studies across campaign tooling, commerce platforms, resilience, and practical AI."
+      );
+      setMeta('meta[property="og:url"]', siteUrl);
+      setMeta('meta[name="twitter:title"]', siteTitle);
+      setMeta('meta[name="twitter:description"]', "Commerce gets complicated. I make the interface feel simple.");
+      document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.setAttribute("href", siteUrl);
     };
   }, [project]);
 

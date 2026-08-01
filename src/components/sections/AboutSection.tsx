@@ -50,7 +50,7 @@ export function AboutSection() {
               Curious about useful, reviewable AI
             </span>
           </div>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
             More of the professional story
             <ArrowUpRight size={16} aria-hidden="true" />
           </a>

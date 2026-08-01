@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Footer, Header } from "./components/layout";
 import { CaseStudyPage } from "./components/pages/CaseStudyPage";
+import { NotFoundPage } from "./components/pages/NotFoundPage";
 import {
   AboutSection,
   ContactSection,
@@ -17,11 +18,15 @@ import { useThemePreference } from "./hooks/useThemePreference";
 
 function App() {
   const { theme, toggleTheme } = useThemePreference();
-  const pathParts = window.location.pathname.split("/").filter(Boolean);
-  const project = pathParts[0] === "work" ? projects.find((item) => item.id === pathParts[1]) : undefined;
+  const pathname = window.location.pathname.replace(/\/+$/, "") || "/";
+  const pathParts = pathname.split("/").filter(Boolean);
+  const isHome = pathname === "/";
+  const isCaseStudyRoute = pathParts[0] === "work" && pathParts.length === 2;
+  const project = isCaseStudyRoute ? projects.find((item) => item.id === pathParts[1]) : undefined;
+  const isNotFound = !isHome && !project;
 
   useEffect(() => {
-    if (project) return;
+    if (project || isNotFound) return;
 
     const scrollToHash = () => {
       const targetId = decodeURIComponent(window.location.hash.slice(1));
@@ -35,7 +40,17 @@ function App() {
     scrollToHash();
     window.addEventListener("hashchange", scrollToHash);
     return () => window.removeEventListener("hashchange", scrollToHash);
-  }, [project]);
+  }, [isNotFound, project]);
+
+  useEffect(() => {
+    if (!isNotFound) return;
+
+    document.title = `Page not found | ${document.title.split("|")[0].trim()}`;
+    document.querySelector<HTMLMetaElement>('meta[name="description"]')?.setAttribute(
+      "content",
+      "The requested page could not be found on Samkit Kothari's portfolio."
+    );
+  }, [isNotFound]);
 
   return (
     <div className="app-shell" data-theme={theme} id="top">
@@ -44,7 +59,9 @@ function App() {
       </a>
       <Header theme={theme} onToggleTheme={toggleTheme} />
 
-      {project ? (
+      {isNotFound ? (
+        <NotFoundPage />
+      ) : project ? (
         <CaseStudyPage project={project} />
       ) : (
         <main id="main-content">

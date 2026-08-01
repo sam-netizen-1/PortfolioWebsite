@@ -14,7 +14,7 @@ export function ExperienceTimeline() {
           title="Growing from screens into systems."
           description="A progression from frontend delivery into platform ownership, resilience, mentoring, and the business context around technical decisions."
         />
-        <a className="journey-resume-link" href={profile.resume} target="_blank" rel="noreferrer">
+        <a className="journey-resume-link" href={profile.resume} target="_blank" rel="noopener noreferrer">
           Open the full résumé
           <ArrowUpRight size={16} aria-hidden="true" />
         </a>

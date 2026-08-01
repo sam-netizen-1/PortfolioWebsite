@@ -12,11 +12,11 @@ export function Footer() {
         </div>
       </div>
       <div className="footer-links" aria-label="Footer links">
-        <a href={profile.linkedin} target="_blank" rel="noreferrer">
+        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
           <Linkedin size={16} aria-hidden="true" />
           LinkedIn
         </a>
-        <a href={profile.github} target="_blank" rel="noreferrer">
+        <a href={profile.github} target="_blank" rel="noopener noreferrer">
           <Github size={16} aria-hidden="true" />
           GitHub
         </a>
